@@ -15,8 +15,6 @@ subtitle: Department of Security and Crime Science, UCL
 urlcolor: blue
 ---
 
-**THIS MODULE HANDBOOK IS STILL IN PROGRESS**
-
 ## Introduction
 
 This UG (Year 3) module builds on the quantitative modules of Year 1 (Probability, Statistics and Modelling I) and Year 2 (Probability, Statistics and Modelling II), and introduces data science techniques as means for more sophisticated quantitative data analysis. This module aims to introduce students to computational methods for crime science.
@@ -289,6 +287,8 @@ For each week, the required literature includes one reading on techniques/tools 
 Key resources for this module are:
 
 - [An Introduction to Text Mining](http://us.sagepub.com/en-us/nam/an-introduction-to-text-mining/book249451#contents) (Ignatow & Mihalcea, 2018) - SAGE
+    - _We aim to make this book available as digital copies through UCL library services_
+    - You can buy the paper version at a UCL student discount via this link [https://studysites.uk.sagepub.com/dts-studentdeal/](https://studysites.uk.sagepub.com/dts-studentdeal/)
 - Text mining with R (Silge & Robinson, 2019) - interactive book version freely available at [https://www.tidytextmining.com/](https://www.tidytextmining.com/)
 - Mathematics for Machine Learning (Deisenroth et al., 2019) - freely available at [https://mml-book.github.io/book/mml-book.pdf](https://mml-book.github.io/book/mml-book.pdf)
 - R for Data Science (Grolemund & Wickham, 2016) - interactive book version freely available at [https://r4ds.had.co.nz/](https://r4ds.had.co.nz/)
