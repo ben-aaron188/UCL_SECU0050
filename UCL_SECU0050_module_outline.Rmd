@@ -34,7 +34,7 @@ UCL timetable page: [https://timetable.ucl.ac.uk/tt/createCustomTimet.do#](https
 ## Contact & resources
 
 - Dr Bennett Kleinberg, Assistant Professor in Data Science, bennett.kleinberg@ucl.ac.uk
-- TA: Daniel Hammocks, Doctoral researcher, daniel.hammocks@ucl.ac.uk
+- TA: Josh Kamps, Doctoral researcher, josh.kamps@ucl.ac.uk
 
 The **moodle page** will accompany this module [here](https://moodle.ucl.ac.uk/course/view.php?id=11193).
 
@@ -144,9 +144,8 @@ Please ensure that you follow the guides below to setup your computer with the n
     - Soldner, F., Ho, J. C., Makhortykh, M., van der Vegt, I. W. J., Mozes, M., & Kleinberg, B. (2019). Uphill from here: Sentiment patterns in videos from left- and right-wing YouTube news channels. Proceedings of the Third Workshop on Natural Language Processing and Computational Social Science, 84–93. [https://doi.org/10.18653/v1/W19-2110](https://doi.org/10.18653/v1/W19-2110)
     - [MDN HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [MDN HTML tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
     - Recommended: Pfeffer, J., Mayer, K., & Morstatter, F. (2018). Tampering with Twitter’s Sample API. EPJ Data Science, 7(1), 50. [https://doi.org/10.1140/epjds/s13688-018-0178-0](https://doi.org/10.1140/epjds/s13688-018-0178-0)
-- Slides
-- Tutorial
-- Homework
+- Slides: [Week 1: Web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_1/week1_secu0050.html)
+- Tutorial + Homework: [Tutorial, week 1: web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050.nb.html)
 
 ### Week 2 - Web data collection II (23 Jan)
 
