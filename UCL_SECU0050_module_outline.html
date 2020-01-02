@@ -291,12 +291,11 @@ div.tocify {
 <h1 class="title toc-ignore">DATA SCIENCE FOR CRIME SCIENTISTS (UCL SECU0050)</h1>
 <h3 class="subtitle"><em>Department of Security and Crime Science, UCL</em></h3>
 <h4 class="author"><em>Bennett Kleinberg (<a href="mailto:bennett.kleinberg@ucl.ac.uk">bennett.kleinberg@ucl.ac.uk</a>)</em></h4>
-<h4 class="date"><em>27/09/2019</em></h4>
+<h4 class="date"><em>16/12/2019</em></h4>
 
 </div>
 
 
-<p><strong>THIS MODULE HANDBOOK IS STILL IN PROGRESS</strong></p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>This UG (Year 3) module builds on the quantitative modules of Year 1 (Probability, Statistics and Modelling I) and Year 2 (Probability, Statistics and Modelling II), and introduces data science techniques as means for more sophisticated quantitative data analysis. This module aims to introduce students to computational methods for crime science.</p>
@@ -465,18 +464,12 @@ div.tocify {
 <td>30</td>
 <td>10</td>
 <td>19 Mar</td>
-<td>Case studies I</td>
+<td>Case studies</td>
 </tr>
 <tr class="odd">
 <td>31</td>
 <td>11</td>
 <td>26 Mar</td>
-<td>Case studies II</td>
-</tr>
-<tr class="even">
-<td>32</td>
-<td>12</td>
-<td>30 Mar</td>
 <td><strong>Class test</strong></td>
 </tr>
 </tbody>
@@ -505,18 +498,27 @@ div.tocify {
 <div id="content" class="section level2">
 <h2>Content</h2>
 <p><em>Note: slides and tutorials will be added as the module progresses.</em></p>
+<div id="week-0---module-preparation-and-software-setup" class="section level3">
+<h3>Week 0 - Module preparation and software setup</h3>
+<p>Please ensure that you follow the guides below to setup your computer with the necessary software. We also assume that you have a basic understanding of pragmatically solving coding problems. Do do this, please take the time to walk through the tutorial below.</p>
+<ul>
+<li>Tutorial guide: <a href="https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/8cee7970ae540c8c23d04a308ec7e19cb732abc3/tutorials/week_0/r_in_12_steps.html">R for crime scientists in 12 steps</a></li>
+<li>Tutorial guide: <a href="https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/8cee7970ae540c8c23d04a308ec7e19cb732abc3/tutorials/week_0/getting_ready_for_r.html">Getting ready for R</a></li>
+<li>Tutorial guide: <a href="https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/df0b0c3114f3fc804468bbcd831fc8345547b91a/tutorials/week_0/how_to_solve_data_science_problems.html">How to solve data science problems</a></li>
+</ul>
+</div>
 <div id="week-1---web-data-collection-i-16-jan" class="section level3">
 <h3>Week 1 - Web data collection I (16 Jan)</h3>
 <ul>
 <li>Topics covered: web data collection with APIs</li>
 <li>Required preparation
 <ul>
-<li>Pfeffer, J., Mayer, K., &amp; Morstatter, F. (2018). Tampering with Twitter’s Sample API. EPJ Data Science, 7(1), 50. <a href="https://doi.org/10.1140/epjds/s13688-018-0178-0" class="uri">https://doi.org/10.1140/epjds/s13688-018-0178-0</a></li>
 <li>Morstatter, F., Pfeffer, J., Liu, H., &amp; Carley, K. M. (2013). Is the Sample Good Enough? Comparing Data from Twitter’s Streaming API with Twitter’s Firehose. ArXiv:1306.5204 [Physics]. Retrieved from <a href="http://arxiv.org/abs/1306.5204" class="uri">http://arxiv.org/abs/1306.5204</a></li>
 <li>Soldner, F., Ho, J. C., Makhortykh, M., van der Vegt, I. W. J., Mozes, M., &amp; Kleinberg, B. (2019). Uphill from here: Sentiment patterns in videos from left- and right-wing YouTube news channels. Proceedings of the Third Workshop on Natural Language Processing and Computational Social Science, 84–93. <a href="https://doi.org/10.18653/v1/W19-2110" class="uri">https://doi.org/10.18653/v1/W19-2110</a></li>
 <li><em>tuber</em> - Access YouTube API via R. <a href="https://soodoku.github.io/tuber/" class="uri">https://soodoku.github.io/tuber/</a></li>
 <li>Jeong, J. (2019). What Is API and How To Use Youtube API? <a href="https://towardsdatascience.com/what-is-api-and-how-to-use-youtube-api-65525744f520" class="uri">https://towardsdatascience.com/what-is-api-and-how-to-use-youtube-api-65525744f520</a></li>
 <li>YouTube. <a href="https://developers.google.com/youtube/registering_an_application">Obtaining authorization credentials</a></li>
+<li>Recommended: Pfeffer, J., Mayer, K., &amp; Morstatter, F. (2018). Tampering with Twitter’s Sample API. EPJ Data Science, 7(1), 50. <a href="https://doi.org/10.1140/epjds/s13688-018-0178-0" class="uri">https://doi.org/10.1140/epjds/s13688-018-0178-0</a></li>
 </ul></li>
 <li>Slides</li>
 <li>Tutorial</li>
@@ -556,7 +558,7 @@ div.tocify {
 <li>Ignatow &amp; Mihalcea, 2018: C8 Basic text properties</li>
 <li><a href="https://r4ds.had.co.nz/strings.html">Grolemund &amp; Wickham, 2016: C14 Strings</a></li>
 <li><a href="https://quanteda.io/articles/quickstart.html">Quanteda quick start guide</a></li>
-<li><a href="https://stringr.tidyverse.org/articles/regular-expressions.html">Regular expressions with stringr</a></li>
+<li>Recommended: <a href="https://stringr.tidyverse.org/articles/regular-expressions.html">Regular expressions with stringr</a></li>
 </ul></li>
 <li>Slides</li>
 <li>Tutorial</li>
@@ -571,7 +573,7 @@ div.tocify {
 <h3>Week 4 - Text mining II (6 Feb)</h3>
 <ul>
 <li>Topics covered: POS tagging, named entities, ngrams, sentiment analysis, sentiment trajectories</li>
-<li>Required preparation</li>
+<li>Required preparation: tbc.</li>
 <li>Slides</li>
 <li>Tutorial</li>
 <li>Homework</li>
@@ -607,8 +609,8 @@ div.tocify {
 <li>Ignatow &amp; Mihalcea, 2018: C9 Supervised learning</li>
 <li><a href="https://lgatto.github.io/IntroMachineLearningWithR/supervised-learning.html">Gatto, 2019: Supervised learning</a></li>
 <li><a href="https://mml-book.github.io/book/mml-book.pdf">Deisenroth et al., 2019: C12 Classification with Support Vector Machines</a></li>
-<li><a href="https://topepo.github.io/caret/model-training-and-tuning.html">Kuhn, 2019: C5 Model training</a></li>
 <li><a href="https://topepo.github.io/caret/measuring-performance.html">Kuhn, 2019: C17 Measuring performance</a></li>
+<li>Recommended: <a href="https://topepo.github.io/caret/model-training-and-tuning.html">Kuhn, 2019: C5 Model training</a></li>
 </ul></li>
 <li>Slides</li>
 <li>Tutorial</li>
@@ -635,38 +637,36 @@ div.tocify {
 <p>Guest lecture: Josh Kamps (Doctoral researcher)</p>
 <ul>
 <li>Topics covered: neural networs, deep learning</li>
-<li>Required preparation</li>
+<li>Required preparation: tbc</li>
 <li>Slides</li>
 <li>Tutorial</li>
 <li>Homework</li>
 </ul>
 </div>
-<div id="week-10---case-studies-i-19-mar" class="section level3">
-<h3>Week 10 - Case studies I (19 Mar)</h3>
-<p>This lecture includes a guest talk:</p>
-<p>Guest lecture: Daniel Hammocks (Doctoral researcher) - “Facial recognition systems”</p>
+<div id="week-10---case-studies-19-mar" class="section level3">
+<h3>Week 10 - Case studies (19 Mar)</h3>
+<!-- This lecture includes a guest talk: -->
+<!-- Guest lecture: Daniel Hammocks (Doctoral researcher) - "Facial recognition systems"  -->
+<!-- - Required preparation -->
+<!--     - Metropolitan Police (2019). Live Facial Recognition. [https://www.met.police.uk/live-facial-recognition-trial/](https://www.met.police.uk/live-facial-recognition-trial/) -->
+<!--     - Machine Learning From Scratch: Part 3 - Arrays and representations. [https://towardsdatascience.com/machine-learning-from-scratch-part-3-ed572330367d](https://towardsdatascience.com/machine-learning-from-scratch-part-3-ed572330367d) -->
+<!--     - Biometrics and Forensics Ethics Group (2019). Ethical issues arising from the police use of live facial recognition technology. [https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/781745/Facial_Recognition_Briefing_BFEG_February_2019.pdf](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/781745/Facial_Recognition_Briefing_BFEG_February_2019.pdf) -->
+<!--     - Recommended: Viola, P., & Jones, M. (2001). Rapid object detection using a boosted cascade of simple features. Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001, 1, I–I. [https://doi.org/10.1109/CVPR.2001.990517](https://doi.org/10.1109/CVPR.2001.990517) -->
+<!--     - Recommended: Big Brother Watch (2018). The lawless growth of facial recognition in UK policing. [https://bigbrotherwatch.org.uk/wp-content/uploads/2018/05/Face-Off-final-digital-1.pdf](https://bigbrotherwatch.org.uk/wp-content/uploads/2018/05/Face-Off-final-digital-1.pdf) -->
+<!-- - Slides -->
+<!-- - Tutorial -->
+<!-- - Homework -->
+<!-- ### Week 11 - Case studies II (26 Mar) -->
+<p>This lecture includes three guest talks:</p>
 <ul>
-<li>Required preparation
-<ul>
-<li>Metropolitan Police (2019). Live Facial Recognition. <a href="https://www.met.police.uk/live-facial-recognition-trial/" class="uri">https://www.met.police.uk/live-facial-recognition-trial/</a></li>
-<li>Big Brother Watch (2018). The lawless growth of facial recognition in UK policing. <a href="https://bigbrotherwatch.org.uk/wp-content/uploads/2018/05/Face-Off-final-digital-1.pdf" class="uri">https://bigbrotherwatch.org.uk/wp-content/uploads/2018/05/Face-Off-final-digital-1.pdf</a></li>
-<li>Machine Learning From Scratch: Part 3 - Arrays and representations. <a href="https://towardsdatascience.com/machine-learning-from-scratch-part-3-ed572330367d" class="uri">https://towardsdatascience.com/machine-learning-from-scratch-part-3-ed572330367d</a></li>
-<li>Biometrics and Forensics Ethics Group (2019). Ethical issues arising from the police use of live facial recognition technology. <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/781745/Facial_Recognition_Briefing_BFEG_February_2019.pdf" class="uri">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/781745/Facial_Recognition_Briefing_BFEG_February_2019.pdf</a></li>
-<li>Recommended: Viola, P., &amp; Jones, M. (2001). Rapid object detection using a boosted cascade of simple features. Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001, 1, I–I. <a href="https://doi.org/10.1109/CVPR.2001.990517" class="uri">https://doi.org/10.1109/CVPR.2001.990517</a></li>
-</ul></li>
-<li>Slides</li>
-<li>Tutorial</li>
-<li>Homework</li>
-</ul>
-</div>
-<div id="week-11---case-studies-ii-26-mar" class="section level3">
-<h3>Week 11 - Case studies II (26 Mar)</h3>
-<p>This lecture includes two guest talks:</p>
-<ul>
+<li>Daniel Hammocks - “Facial recognition systems”</li>
 <li>Maximilian Mozes - “On the robustness of intelligent systems”</li>
 <li><p>Isabelle van der Vegt - “Data Science for Threat Assessment”</p></li>
 <li>Required preparation
 <ul>
+<li>Metropolitan Police (2019). Live Facial Recognition. <a href="https://www.met.police.uk/live-facial-recognition-trial/" class="uri">https://www.met.police.uk/live-facial-recognition-trial/</a></li>
+<li>Machine Learning From Scratch: Part 3 - Arrays and representations. <a href="https://towardsdatascience.com/machine-learning-from-scratch-part-3-ed572330367d" class="uri">https://towardsdatascience.com/machine-learning-from-scratch-part-3-ed572330367d</a></li>
+<li>Biometrics and Forensics Ethics Group (2019). Ethical issues arising from the police use of live facial recognition technology. <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/781745/Facial_Recognition_Briefing_BFEG_February_2019.pdf" class="uri">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/781745/Facial_Recognition_Briefing_BFEG_February_2019.pdf</a></li>
 <li>Gu, T., Dolan-Gavitt, B., &amp; Garg, S. (2019). BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain. ArXiv:1708.06733 [Cs]. Retrieved from <a href="http://arxiv.org/abs/1708.06733" class="uri">http://arxiv.org/abs/1708.06733</a></li>
 <li>Kurakin, A., Goodfellow, I., &amp; Bengio, S. (2017). Adversarial examples in the physical world. ArXiv:1607.02533 [Cs, Stat]. Retrieved from <a href="http://arxiv.org/abs/1607.02533" class="uri">http://arxiv.org/abs/1607.02533</a></li>
 <li>Azucar, D., Marengo, D., &amp; Settanni, M. (2018). Predicting the Big 5 personality traits from digital footprints on social media: A meta-analysis. Personality and Individual Differences, 124, 150–159. <a href="https://doi.org/10.1016/j.paid.2017.12.018" class="uri">https://doi.org/10.1016/j.paid.2017.12.018</a></li>
@@ -690,7 +690,11 @@ div.tocify {
 <p>For each week, the required literature includes one reading on techniques/tools that are important for data science projects but are not covered in the lectures or tutorials. You will likely need these techniques in the project and we assume that you have read and prepared the reading so that you are able to use the techniques.</p>
 <p>Key resources for this module are:</p>
 <ul>
-<li><a href="http://us.sagepub.com/en-us/nam/an-introduction-to-text-mining/book249451#contents">An Introduction to Text Mining</a> (Ignatow &amp; Mihalcea, 2018) - SAGE</li>
+<li><a href="http://us.sagepub.com/en-us/nam/an-introduction-to-text-mining/book249451#contents">An Introduction to Text Mining</a> (Ignatow &amp; Mihalcea, 2018) - SAGE
+<ul>
+<li><em>UCL library services have ordered a few copies of this book</em></li>
+<li>You can buy the book at a UCL student discount via this link <a href="https://studysites.uk.sagepub.com/dts-studentdeal/" class="uri">https://studysites.uk.sagepub.com/dts-studentdeal/</a></li>
+</ul></li>
 <li>Text mining with R (Silge &amp; Robinson, 2019) - interactive book version freely available at <a href="https://www.tidytextmining.com/" class="uri">https://www.tidytextmining.com/</a></li>
 <li>Mathematics for Machine Learning (Deisenroth et al., 2019) - freely available at <a href="https://mml-book.github.io/book/mml-book.pdf" class="uri">https://mml-book.github.io/book/mml-book.pdf</a></li>
 <li>R for Data Science (Grolemund &amp; Wickham, 2016) - interactive book version freely available at <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
@@ -722,7 +726,7 @@ div.tocify {
 <ul>
 <li>Weight for final grade: 30%</li>
 <li>Learning outcomes tested: (1) demonstrating knowledge of a broader range of analytical techniques used in the field of Security and Crime Science, (2) understanding the purpose, advantages and disadvantages of different forms of data science techniques, (3) interpreting the results of data science techniques.</li>
-<li>Date: 30 March 2020, 10am-12pm, IOE 20 Bedford Way, Room 305 – Clarke Hall.</li>
+<li>Date: 26 March 2020, during the normal lecture+tutorial hours, 9am-12pm.</li>
 </ul>
 <p><strong>Details:</strong> This 1-hour closed-book test covers theoretical, technical and conceptual aspects of the lectures, tutorials and the required literature. You will be given 10 multiple-choice questions. For each question, there will be five possible answer options. At least one option is correct and you are asked to select all options that apply (i.e. this could be one, two, three, four, or all five options). <strong>If you select the correct - <em>and only the correct</em> - combination of answer options, you will be given ten points for a question.</strong> In total, you can achieve 100 points in this test.</p>
 </div>
