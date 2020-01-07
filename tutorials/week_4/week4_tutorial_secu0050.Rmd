@@ -38,7 +38,7 @@ Which bi-gram (and tri-gram) has the highest average TFIDF value in each corpus?
 
 ## Task 2: Using parts-of-speech to examine author patterns
 
-In Nov 2017, the allegations around the Weinstein sexual harassment case were among the top topics in the media. We retrieved the Guardian coverage on the keyword "weinstein" for Nov. 2017. Load the data.frame in `weinstein_guardian.RData` from [!!!]().
+In Nov 2017, the allegations around the Weinstein sexual harassment case were among the top topics in the media. We retrieved the Guardian coverage on the keyword "weinstein" for Nov. 2017. Load the data.frame in `weinstein_guardian.RData` from [https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/weinstein_guardian.RData](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/weinstein_guardian.RData).
 
 ```{r}
 #replace the placeholder
@@ -76,7 +76,7 @@ The lecture introduced you to the sentiment trajectory approach. This method can
 Use the functions of the repository [here](https://github.com/ben-aaron188/naive_context_sentiment) and extract the discrete-cosine-transformed sentiment trajectories for:
 
 - the inaugural speeches and
-- vlog transcript corpus [available here]()
+- vlogs transcript corpus [available here](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/vlogs_corpus.RData)
 
 Answer the questions below:
 
