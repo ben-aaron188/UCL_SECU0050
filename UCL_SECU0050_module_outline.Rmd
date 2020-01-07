@@ -141,7 +141,6 @@ Please ensure that you follow the guides below to setup your computer with the n
 - Topics covered: web data collection with APIs
 - Required preparation
     - Morstatter, F., Pfeffer, J., Liu, H., & Carley, K. M. (2013). Is the Sample Good Enough? Comparing Data from Twitter’s Streaming API with Twitter’s Firehose. ArXiv:1306.5204 [Physics]. Retrieved from [http://arxiv.org/abs/1306.5204](http://arxiv.org/abs/1306.5204)
-    - Soldner, F., Ho, J. C., Makhortykh, M., van der Vegt, I. W. J., Mozes, M., & Kleinberg, B. (2019). Uphill from here: Sentiment patterns in videos from left- and right-wing YouTube news channels. Proceedings of the Third Workshop on Natural Language Processing and Computational Social Science, 84–93. [https://doi.org/10.18653/v1/W19-2110](https://doi.org/10.18653/v1/W19-2110)
     - [MDN HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [MDN HTML tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
     - Recommended: Pfeffer, J., Mayer, K., & Morstatter, F. (2018). Tampering with Twitter’s Sample API. EPJ Data Science, 7(1), 50. [https://doi.org/10.1140/epjds/s13688-018-0178-0](https://doi.org/10.1140/epjds/s13688-018-0178-0)
 - Slides: [Week 1: Web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_1/week1_secu0050.html)
@@ -174,11 +173,15 @@ Please ensure that you follow the guides below to setup your computer with the n
 
 ### Week 4 - Text mining II (6 Feb)
 
-- Topics covered: POS tagging, named entities, ngrams, sentiment analysis, sentiment trajectories
-- Required preparation: tbc.
-- Slides
-- Tutorial
-- Homework
+- Topics covered: POS tagging, ngrams, sentiment analysis, sentiment trajectories
+- Required preparation:
+    - Soldner, F., Ho, J. C., Makhortykh, M., van der Vegt, I. W. J., Mozes, M., & Kleinberg, B. (2019). Uphill from here: Sentiment patterns in videos from left- and right-wing YouTube news channels. Proceedings of the Third Workshop on Natural Language Processing and Computational Social Science, 84–93. [https://doi.org/10.18653/v1/W19-2110](https://doi.org/10.18653/v1/W19-2110)
+    - Kleinberg, B., Mozes, M., & van der Vegt, I. (2018). Identifying the sentiment styles of YouTube’s vloggers. 3581–3590. [https://www.aclweb.org/anthology/D18-1394](https://www.aclweb.org/anthology/D18-1394)
+    - Gao, J., Jockers, M. L., Laudun, J., & Tangherlini, T. (2016). A multiscale theory for the dynamical evolution of sentiment in novels. Behavioral, Economic and Socio-Cultural Computing (BESC), 2016 International Conference On, 1–4.
+- Recommended:
+    - Jockers, M. (2015). Revealing Sentiment and Plot Arcs with the Syuzhet Package. http://www.matthewjockers.net/2015/02/02/syuzhet/
+- Slides: [Week 4: Text mining 2]()
+- Tutorial+ Homework: [Tutorial: week 4: Text mining 2]()
 
 ### Week 5 - Text mining III (13 Feb)
 
