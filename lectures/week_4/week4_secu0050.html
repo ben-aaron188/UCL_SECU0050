@@ -898,9 +898,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>POS tagging with <code>spacyr</code></h2>
 <pre><code>## Finding a python executable with spaCy installed...</code></pre>
 <pre><code>## spaCy (language model: en) is installed in more than one python</code></pre>
-<pre><code>## spacyr will use /usr/local/bin/python3 (because ask = FALSE)</code></pre>
+<pre><code>## spacyr will use /usr/bin/python3 (because ask = FALSE)</code></pre>
 <pre><code>## successfully initialized (spaCy Version: 2.0.12, language model: en)</code></pre>
-<pre><code>## (python options: type = &quot;python_executable&quot;, value = &quot;/usr/local/bin/python3&quot;)</code></pre>
+<pre><code>## (python options: type = &quot;python_executable&quot;, value = &quot;/usr/bin/python3&quot;)</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spacy_parse</span>(<span class="kw">as.character</span>(pos_texts<span class="op">$</span>text[<span class="dv">1</span>])
             , <span class="dt">dependency =</span> <span class="ot">FALSE</span>
             , <span class="dt">lemma =</span> <span class="ot">FALSE</span>
