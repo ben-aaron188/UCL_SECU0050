@@ -18,7 +18,7 @@ _Note: this tutorial assumes that you have installed the `caret` package._
 
 ## Task 1: Identifying vloggers based on vlog transcripts
 
-Retrieve the dataframe stored in the RData file 'vlogs_unigrams' from [...](). This dataset contains features extracted from the transcripts of two YouTube vloggers (have a look at the column 'vlogger_name'). 
+Retrieve the dataframe stored in the RData file 'vlogs_unigrams' from [https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/vlogs_unigrams.RData](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/vlogs_unigrams.RData). This dataset contains features extracted from the transcripts of two YouTube vloggers (have a look at the column 'vlogger_name'). 
 
 Specifically, the features are counts unigrams (already sparsity-corrected). Your task is to use machine learning to investigate whether the vlogger can be identified through the use of specific unigrams in their vlogs.
 
@@ -61,7 +61,7 @@ Questions:
 
 ## Task 2: Extracting features from raw text data
 
-The next step to proper text classification is that you extract features from the raw text data. You can access the raw vlog transcripts at [...](). The file is called `vlogs_corpus_large.RData` and loads a corpus object called `vlogs_corpus_large`, which contains the raw vlogs of the two YouTubers you ran the classification task on above.
+The next step to proper text classification is that you extract features from the raw text data. You can access the raw vlog transcripts at [https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/vlogs_corpus_large.RData](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/data/vlogs_corpus_large.RData). The file is called `vlogs_corpus_large.RData` and loads a corpus object called `vlogs_corpus_large`, which contains the raw vlogs of the two YouTubers you ran the classification task on above.
 
 Your task now is to extract features yourself so you can prepare the data for supervised classification.
 
