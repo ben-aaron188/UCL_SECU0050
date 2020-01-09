@@ -208,17 +208,18 @@ _Use this week to catch up on any literature or homework/tutorials._
 
 ### Week 7 - Machine learning I (27 Feb)
 
-- Topics covered: supervised machine learning (classification + regression), core algorithms, performance metrics
+- Topics covered: supervised machine learning (classification), core algorithms, performance metrics
 - Required preparation
     - Ignatow & Mihalcea, 2018: C13 Text classification
     - Ignatow & Mihalcea, 2018: C9 Supervised learning
     - [Gatto, 2019: Supervised learning](https://lgatto.github.io/IntroMachineLearningWithR/supervised-learning.html)
     - [Deisenroth et al., 2019: C12 Classification with Support Vector Machines](https://mml-book.github.io/book/mml-book.pdf)
     - [Kuhn, 2019: C17 Measuring performance](https://topepo.github.io/caret/measuring-performance.html)
-    - Recommended: [Kuhn, 2019: C5 Model training](https://topepo.github.io/caret/model-training-and-tuning.html)
+- Recommended:
+    - [Kuhn, 2019: C5 Model training](https://topepo.github.io/caret/model-training-and-tuning.html)
+    - [YT, 3Blue1Brown: Bayes theorem, and making probability intuitive](https://www.youtube.com/watch?v=HZGCoVF3YvM)
 - Slides
-- Tutorial
-- Homework
+- Tutorial + Homework
 
 ### Week 8 - Machine learning II (5 Mar)
 
