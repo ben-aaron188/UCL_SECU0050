@@ -94,36 +94,6 @@ Each week is (roughly) structured as follows:
 | 31       	| 11          	| 26 Mar 	| **Class test**          	|
 
 
-<!-- Tutorials: -->
-
-<!-- - API Twitter -->
-<!-- - API YouTube -->
-<!-- - Reddit -->
-
-<!-- - Newspaper -->
-<!-- - MisPers -->
-<!-- - Exotic animals -->
-
-<!-- - lexical diversity on rap lyrics -->
-<!-- - tfidf on rap lyrics -->
-
-<!-- - ngrams, POS, named entities on guardian (which author used the most pronouns?) -->
-<!-- - replication on drill music corpus -->
-
-<!-- - text similarity 1, 2, 3 -->
-<!-- - [M&K Word embeddings](...) -->
-<!-- - across domains -->
-
-<!-- - fake news classification -->
-<!-- - sentiment classification -->
-<!-- - creators for change classification -->
-
-<!-- - clustering of YouTube videos -->
-<!-- - .. -->
-
-<!-- - simple DL in R -->
-
-
 ## Content
 
 _Note: slides and tutorials will be added as the module progresses._
@@ -227,11 +197,8 @@ _Use this week to catch up on any literature or homework/tutorials._
 - Required preparation
     - [Gatto, 2019: C4 Unsupervised learning](https://lgatto.github.io/IntroMachineLearningWithR/unsupervised-learning.html)
     - [Datacamp unsupervised learning](https://www.datacamp.com/courses/unsupervised-learning-in-r)
-- Slides
-- Tutorial
-- Homework
-
-    <!-- - [Quanteda authorship prediction](https://quanteda.io/articles/pkgdown/replication/qss.html) -->
+- Slides:
+- Tutorial + Homework:
 
 ### Week 9 - Machine learning III (12 Mar)
 
