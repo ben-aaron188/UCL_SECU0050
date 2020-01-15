@@ -140,9 +140,9 @@ Implementable in different ways...
 3. API wrappers
     - R packages that use the API
 
-## API capabilities
+<!-- ## API capabilities -->
 
-[Official API docs Twitter](https://developer.twitter.com/en/docs/tweets/search/api-reference)
+<!-- [Official API docs Twitter](https://developer.twitter.com/en/docs/tweets/search/api-reference) -->
 
 ## Useful websites that have an API
 
@@ -207,18 +207,18 @@ names(request.crime)
 
 ## Displaying the data
 
-```{r}
+```{r echo=F}
 knitr::kable(request.crime[1:5, c(1,3,5,10)])
 ```
 
 ## Displaying the data
 
-```{r}
+```{r echo=F}
 knitr::kable(request.crime[11:15, c(10, 17, 21, 23)])
 #note: this displays rows 11-15 and columns 10, 17, 21, and 23
 ```
 
-## The article bodys
+## The article body
 
 ```{r}
 as.character(request.crime$body[33])
@@ -228,7 +228,7 @@ as.character(request.crime$body[33])
 
 Note: not all sections are relevant (e.g., book reviews vs politics vs uk news) 
 
-Option 1: sending a new API request [R package docs](https://rdrr.io/cran/GuardianR/man/get_guardian.html)
+Option 1: sending a new API request [(R package docs)](https://rdrr.io/cran/GuardianR/man/get_guardian.html)
 
 ```{r eval=F}
 library(GuardianR)
@@ -244,7 +244,7 @@ request.crime.uknews = get_guardian("crime",
 load("./guardian_crime_uknews_aug2019.RData")
 ```
 
-## "UK News"" crime coverage
+## "UK News" crime coverage
 
 ```{r}
 dim(request.crime.uknews)
@@ -252,7 +252,7 @@ dim(request.crime.uknews)
 
 ## 
 
-```{r}
+```{r echo=F}
 knitr::kable(request.crime.uknews[1:5, c(1,3,5,10)])
 ```
 
@@ -268,7 +268,7 @@ dim(crime_data_uknews)
 
 Aim: investigate article length
 
-```{r}
+```{r echo=F}
 plot(as.numeric(as.character(request.crime.uknews$wordcount))
      , pch = 19
      , ylab = 'No. of words'
@@ -277,7 +277,7 @@ plot(as.numeric(as.character(request.crime.uknews$wordcount))
 
 ## ... by author
 
-```{r}
+```{r echo=F}
 plot(as.numeric(as.character(request.crime.uknews$wordcount))
      , pch = 19
      , ylab = 'No. of words'
@@ -309,12 +309,13 @@ tapply(X = as.numeric(as.character(request.crime.uknews$wordcount))
 
 ```{r}
 library(aRxiv)
-arxiv_author_search = arxiv_search(query = 'au:"Hinrich Schuetze"', limit=50)
+arxiv_author_search = arxiv_search(query = 'au:"Hinrich Schuetze"'
+                                   , limit=50)
 ```
 
 ##
 
-```{r}
+```{r echo=F}
 knitr::kable(arxiv_author_search[1:5, c(1:4)])
 ```
 
