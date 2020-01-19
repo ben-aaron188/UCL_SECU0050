@@ -3,14 +3,14 @@ title: "DATA SCIENCE FOR CRIME SCIENTISTS (UCL SECU0050)"
 author: "Bennett Kleinberg (bennett.kleinberg@ucl.ac.uk)"
 date: "13/01/2020"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     theme: paper
     toc: yes
     toc_float:
       collapsed: no
       smooth_scroll: yes
+  pdf_document:
+    toc: yes
 subtitle: Department of Security and Crime Science, UCL
 urlcolor: blue
 ---
@@ -113,8 +113,8 @@ Please ensure that you follow the guides below to setup your computer with the n
     - Morstatter, F., Pfeffer, J., Liu, H., & Carley, K. M. (2013). Is the Sample Good Enough? Comparing Data from Twitter’s Streaming API with Twitter’s Firehose. ArXiv:1306.5204 [Physics]. Retrieved from [http://arxiv.org/abs/1306.5204](http://arxiv.org/abs/1306.5204)
     - [MDN HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [MDN HTML tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
     - Recommended: Pfeffer, J., Mayer, K., & Morstatter, F. (2018). Tampering with Twitter’s Sample API. EPJ Data Science, 7(1), 50. [https://doi.org/10.1140/epjds/s13688-018-0178-0](https://doi.org/10.1140/epjds/s13688-018-0178-0)
-- Slides: [Week 1: Web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_1/week1_secu0050.html)
-- Tutorial + Homework: [Tutorial, week 1: web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050.nb.html)
+- Slides: [Week 1: Web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_1/week1_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_1/week1_secu0050.pdf)
+- Tutorial + Homework: [Tutorial, week 1: web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050_solutions.nb.html)
 
 ### Week 2 - Web data collection II (23 Jan)
 
