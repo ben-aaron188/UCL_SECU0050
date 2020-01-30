@@ -320,7 +320,8 @@ We want to "reward" words that are:
 ## Metric for word importance: term frequency
 
 - $tf(t, d) = \frac{\#_{t,d}}{nwords_d}$ (proportion)
-- $tf(t, d) = #_{t,d}$ (count)
+
+- $tf(t, d)$ = #_(t, d) (count)
 
 ## Proportions
 
@@ -339,7 +340,8 @@ knitr::kable(round(dfm_weight(corpus_dfm, scheme = 'count'), 3)[, 10:15])
 ## Double-check the formulae
 
 - $tf(t, d) = \frac{\#_{t, d}}{nwords_d}$ 
-- $tf(t, d) = #_{t, d}$
+
+- $tf(t, d)$ = #_(t, d)
 
 ```{r}
 3/ntoken(mini_corpus[1])
@@ -432,7 +434,7 @@ legend(3, 4, legend=c("log10", "ln", "log2"), col=c("red", "blue", 'green'), lty
 
 ## Log IDF
 
-```{r}
+```{r echo=F}
 {x = 1:50
 plot(x, ylim=c(-5, max(x)), type='l', col='blue', lwd=2.5, ylab="")
 lines(max(x)/x, col='red', lty=2, lwd=2)
@@ -491,7 +493,6 @@ knitr::kable(docfreq(corpus_dfm, scheme = 'inverse', k = 1)[10:12])
 knitr::kable(stopwords()[c(1:5, 20:25)])
 ```
 
-You could decide to remove these.
 
 ## Without stopword removal
 
@@ -565,9 +566,9 @@ knitr::kable(corpus_dfm_sw_removed_stemmed[, 1:8])
 
 ## Readability aspects
 
-- # of words
-- # of characters
-- # of _difficult_ words
+- No. of words
+- No. of characters
+- No. of _difficult_ words
 - punctuation
 - number of syllables
 
@@ -581,9 +582,9 @@ knitr::kable(corpus_dfm_sw_removed_stemmed[, 1:8])
 
 Requires:
 
-- # of words
-- # of sentences
-- # of syllables
+- No. of words
+- No. of sentences
+- No. of syllables
 
 $FRE = 206.835 - 1.015*(\frac{nwords}{nsentences}) - 84.6*(\frac{nsyllables}{nwords})$
 
