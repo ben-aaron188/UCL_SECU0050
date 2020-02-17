@@ -36,7 +36,7 @@ Use the data you have loaded to answer the following three questions:
 #Your code comes here
 ```
 
-3. Now that the last 20 words of each document and calculate the Euclidean-based similarity for all documents using q-grams with $q = 2$. Which two documents have the highest similarity? _(Hint: you can best use a matrix to calculate similarity for all vectors at once)_
+3. Now take the last 20 words of each document and calculate the Euclidean-based similarity for all documents using q-grams with $q = 2$. Which two documents have the highest similarity? _(Hint: you can best use a matrix to calculate similarity for all vectors at once)_
 
 ```{r}
 #Your code comes here
@@ -78,7 +78,7 @@ Do these findings surprise you?
 
 Use the word embeddings you loaded in Task 3 and answer these questions with the appropriate arithmetic operations:
 
-- Which embedding is closer to "LONDON": "WESTMINSTER" or "ENGLAND"?
+- Which embedding is closest to "LONDON": "WESTMINSTER" or "ENGLAND"?
 - What is the closest neighbour to the vector retrieved by calculating: "WOMAN" + "DOCTOR" - "MAN"? What did you expect?
 - In the Twitter pre-trained model, which concept is closest in the vector space to "SUCCESS"?
 

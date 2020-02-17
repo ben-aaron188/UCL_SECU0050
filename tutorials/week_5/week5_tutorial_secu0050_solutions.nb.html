@@ -212,7 +212,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("week5_tutorial_secu0050.Rmd");
+  window.initializeSourceEmbed("week5_tutorial_secu0050_solutions.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -255,8 +255,28 @@ $(document).ready(function () {
 <p>Take a collection of your coursework in your study programme so far (or other coursework you handed in). Read the files into R and create a corpus object from it.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0hlcmUgd2UgbG9hZCB0d28gd29yZCBkb2N1bWVudHMgKHdvcmQgZmlsZXMgZm9yIHBhcGVyIHN1Ym1pc3Npb25zKVxuI0Jlc3QgdXNlIHRoZSByZWFkdGV4dCBwYWNrYWdlIHRvIHJlYWQgdGhlIGZpbGVzIGFuZCB0aGVuIGNvbnN0cnVjdCBhIGNvcnB1cyB1c2luZyB0aGUgdHlwaWNhbCBxdWFudGVkYSBwcm9jZWR1cmUuXG5cbmxpYnJhcnkocmVhZHRleHQpXG5saWJyYXJ5KHF1YW50ZWRhKVxuYGBgIn0= -->
+<pre class="r"><code>#Here we load two word documents (word files for paper submissions)
+#Best use the readtext package to read the files and then construct a corpus using the typical quanteda procedure.
+
+library(readtext)
+library(quanteda)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZG9jMSA9IHJlYWR0ZXh0KCcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9Ecm9wYm94L3Jlc2VhcmNoL3VjbC9hYnVzaXZlX2xhbmd1YWdlL3BhcGVyL2x0YV9wYXBlcl9qY3NzX3N1Ym1pc3Npb24uZG9jeCcpXG5kb2MyID0gcmVhZHRleHQoJy9Vc2Vycy9iZW5uZXR0a2xlaW5iZXJnL0Ryb3Bib3gvcmVzZWFyY2gvdWNsL2dhbmdfdmlvbGVuY2UvcGFwZXIvcGFwZXIyL3NlbnRpbWVudF9kcmlsbF9tdXNpY19rbGVpbmJlcmdfbWNmYXJsYW5lLmRvY3gnKVxuYGBgIn0= -->
+<pre class="r"><code>doc1 = readtext('/Users/bennettkleinberg/Dropbox/research/ucl/abusive_language/paper/lta_paper_jcss_submission.docx')
+doc2 = readtext('/Users/bennettkleinberg/Dropbox/research/ucl/gang_violence/paper/paper2/sentiment_drill_music_kleinberg_mcfarlane.docx')</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI05vdGUgdGhhdCB0aGUgdGV4dCBuZWVkZWQgZm9yIHRoZSBjb3JwdXMgaXMgbG9jYXRlZCBpbiB0aGUgYHRleHRgIGNvbHVtblxubXlfZG9jc19jb3JwdXMgPSBjb3JwdXMoYyhkb2MxJHRleHQsIGRvYzIkdGV4dCkpXG5gYGAifQ== -->
+<pre class="r"><code>#Note that the text needed for the corpus is located in the `text` column
+my_docs_corpus = corpus(c(doc1$text, doc2$text))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -266,9 +286,48 @@ $(document).ready(function () {
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pZ3JhbXMgPSBkZm0obXlfZG9jc19jb3JwdXNcbiAgICAgICAgICAgICAgICwgdG9sb3dlciA9IFRcbiAgICAgICAgICAgICAgICwgcmVtb3ZlID0gc3RvcHdvcmRzKClcbiAgICAgICAgICAgICAgICwgcmVtb3ZlX3B1bmN0ID0gVFxuICAgICAgICAgICAgICAgLCBuZ3JhbXMgPSAxKVxuYmlncmFtcyA9IGRmbShteV9kb2NzX2NvcnB1c1xuICAgICAgICAgICAgICAgLCB0b2xvd2VyID0gVFxuICAgICAgICAgICAgICAgLCByZW1vdmUgPSBzdG9wd29yZHMoKVxuICAgICAgICAgICAgICAgLCByZW1vdmVfcHVuY3QgPSBUXG4gICAgICAgICAgICAgICAsIG5ncmFtcyA9IDIpXG5gYGAifQ== -->
+<pre class="r"><code>unigrams = dfm(my_docs_corpus
+               , tolower = T
+               , remove = stopwords()
+               , remove_punct = T
+               , ngrams = 1)
+bigrams = dfm(my_docs_corpus
+               , tolower = T
+               , remove = stopwords()
+               , remove_punct = T
+               , ngrams = 2)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG9wZmVhdHVyZXModW5pZ3JhbXMpXG5cbmBgYCJ9 -->
+<pre class="r"><code>topfeatures(unigrams)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIGZhbWlseSAgICAgIGdpdmVuICAgICAgdXNlcnMgIHNlbnRpbWVudCAgICAgICBodHRwICAgICAgICAgaWQgem90ZXJvLm9yZyBcbiAgICAgICAzMjAgICAgICAgIDMyMCAgICAgICAgMjk0ICAgICAgICAyNDMgICAgICAgIDIyNiAgICAgICAgMTg0ICAgICAgICAxODQgXG4gICAgIGl0ZW1zICAgbGFuZ3VhZ2UgICAgIHNjaGVtYSBcbiAgICAgICAxODQgICAgICAgIDE4MyAgICAgICAgMTUyIFxuIn0= -->
+<pre><code>    family      given      users  sentiment       http         id zotero.org 
+       320        320        294        243        226        184        184 
+     items   language     schema 
+       184        183        152 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG9wZmVhdHVyZXMoYmlncmFtcylcblxuYGBgIn0= -->
+<pre class="r"><code>topfeatures(bigrams)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBodHRwX3pvdGVyby5vcmcgIHpvdGVyby5vcmdfdXNlcnMgICAgICAgICAgICBvZl90aGUgICAgIHVzZXJzXzM1NDkzMjkgXG4gICAgICAgICAgICAgIDE4NCAgICAgICAgICAgICAgIDE4NCAgICAgICAgICAgICAgIDE2OCAgICAgICAgICAgICAgIDExOCBcbiAgICAzNTQ5MzI5X2l0ZW1zICAgICAgICAgdXJpc19odHRwICAgICAgICAgIHVyaV9odHRwICAgICAgIGl0ZW1kYXRhX2lkIFxuICAgICAgICAgICAgICAxMTggICAgICAgICAgICAgICAgOTIgICAgICAgICAgICAgICAgOTIgICAgICAgICAgICAgICAgOTIgXG5pc3N1ZWRfZGF0ZS1wYXJ0cyAgICAgYXV0aG9yX2ZhbWlseSBcbiAgICAgICAgICAgICAgIDkyICAgICAgICAgICAgICAgIDkwIFxuIn0= -->
+<pre><code>  http_zotero.org  zotero.org_users            of_the     users_3549329 
+              184               184               168               118 
+    3549329_items         uris_http          uri_http       itemdata_id 
+              118                92                92                92 
+issued_date-parts     author_family 
+               92                90 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="2" style="list-style-type: decimal">
@@ -276,19 +335,43 @@ $(document).ready(function () {
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud29yZHNfNTBfZG9jMSA9IHRva2Vucyhkb2MxJHRleHQsIHJlbW92ZV9wdW5jdCA9IFQpXG53b3Jkc181MF9kb2MxID0gd29yZHNfNTBfZG9jMSR0ZXh0MVsxOjUwXVxuIyBmb3Igc3RyaW5nc2ltIHdlIG5lZWQgdGhlIHdvcmRzIGNvbmNhdGVuYXRlZCBpbnRvIG9uZSBzdHJpbmc6XG5zdHJpbmdfd29yZHNfNTBfZG9jMSA9IHBhc3RlKHdvcmRzXzUwX2RvYzEsIGNvbGxhcHNlID0gJyAnKVxud29yZHNfNTBfZG9jMiA9IHRva2Vucyhkb2MyJHRleHQsIHJlbW92ZV9wdW5jdCA9IFQpXG53b3Jkc181MF9kb2MyID0gd29yZHNfNTBfZG9jMiR0ZXh0MVsxOjUwXVxuc3RyaW5nX3dvcmRzXzUwX2RvYzIgPSBwYXN0ZSh3b3Jkc181MF9kb2MyLCBjb2xsYXBzZSA9ICcgJylcbmxpYnJhcnkoc3RyaW5nZGlzdClcbnN0cmluZ3NpbShzdHJpbmdfd29yZHNfNTBfZG9jMSwgc3RyaW5nX3dvcmRzXzUwX2RvYzIsIG1ldGhvZCA9ICdsdicpXG5cbmBgYCJ9 -->
+<pre class="r"><code>words_50_doc1 = tokens(doc1$text, remove_punct = T)
+words_50_doc1 = words_50_doc1$text1[1:50]
+# for stringsim we need the words concatenated into one string:
+string_words_50_doc1 = paste(words_50_doc1, collapse = ' ')
+words_50_doc2 = tokens(doc2$text, remove_punct = T)
+words_50_doc2 = words_50_doc2$text1[1:50]
+string_words_50_doc2 = paste(words_50_doc2, collapse = ' ')
+library(stringdist)
+stringsim(string_words_50_doc1, string_words_50_doc2, method = 'lv')
+</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMzQzNTc1NFxuIn0= -->
+<pre><code>[1] 0.3435754</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="3" style="list-style-type: decimal">
-<li>Now take the last 20 words of each document and calculate the Euclidean-based similarity for all documents using q-grams with <span class="math inline">\(q = 2\)</span>. Which two documents have the highest similarity? <em>(Hint: you can best use a matrix to calculate similarity for all vectors at once)</em></li>
+<li>Now that the last 20 words of each document and calculate the Euclidean-based similarity for all documents using q-grams with <span class="math inline">\(q = 2\)</span>. Which two documents have the highest similarity? <em>(Hint: you can best use a matrix to calculate similarity for all vectors at once)</em></li>
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGFzdF8yMF9kb2MxID0gdG9rZW5zKGRvYzEkdGV4dCwgcmVtb3ZlX3B1bmN0ID0gVClcbmxhc3RfMjBfZG9jMSA9IGxhc3RfMjBfZG9jMSR0ZXh0MVsobnRva2VuKGxhc3RfMjBfZG9jMSktMjApOm50b2tlbihsYXN0XzIwX2RvYzEpXVxuc3RyaW5nX2xhc3RfMjBfZG9jMSA9IHBhc3RlKGxhc3RfMjBfZG9jMSwgY29sbGFwc2UgPSAnICcpXG5sYXN0XzIwX2RvYzIgPSB0b2tlbnMoZG9jMiR0ZXh0LCByZW1vdmVfcHVuY3QgPSBUKVxubGFzdF8yMF9kb2MyID0gbGFzdF8yMF9kb2MyJHRleHQxWyhudG9rZW4obGFzdF8yMF9kb2MyKS0yMCk6bnRva2VuKGxhc3RfMjBfZG9jMildXG5zdHJpbmdfbGFzdF8yMF9kb2MyID0gcGFzdGUobGFzdF8yMF9kb2MyLCBjb2xsYXBzZSA9ICcgJylcbiNub3RlIHRoYXQgd2UgbmVlZCB0aGUgcWdyYW0gb3V0cHV0IGFzIGEgbWF0cml4IHRvIHVzZSB0aGUgYmFzZSBSIGBkaXN0YCBmdW5jdGlvblxucWdyYW1zX291dHB1dCA9IHFncmFtcyhzdHJpbmdfbGFzdF8yMF9kb2MxLCBzdHJpbmdfbGFzdF8yMF9kb2MyLCBxID0gMilcbmRpc3QocWdyYW1zX291dHB1dCwgbWV0aG9kID0gJ2V1Y2xpZGVhbicpXG5gYGAifQ== -->
+<pre class="r"><code>last_20_doc1 = tokens(doc1$text, remove_punct = T)
+last_20_doc1 = last_20_doc1$text1[(ntoken(last_20_doc1)-20):ntoken(last_20_doc1)]
+string_last_20_doc1 = paste(last_20_doc1, collapse = ' ')
+last_20_doc2 = tokens(doc2$text, remove_punct = T)
+last_20_doc2 = last_20_doc2$text1[(ntoken(last_20_doc2)-20):ntoken(last_20_doc2)]
+string_last_20_doc2 = paste(last_20_doc2, collapse = ' ')
+#note that we need the qgram output as a matrix to use the base R `dist` function
+qgrams_output = qgrams(string_last_20_doc1, string_last_20_doc2, q = 2)
+dist(qgrams_output, method = 'euclidean')</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgVjFcblYyIDIwLjYzOTc3XG4ifQ== -->
+<pre><code>         V1
+V2 20.63977</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="4" style="list-style-type: decimal">
@@ -296,8 +379,14 @@ $(document).ready(function () {
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyaW5nc2ltKHN0cmluZ19sYXN0XzIwX2RvYzEsIHN0cmluZ19sYXN0XzIwX2RvYzIsIHE9MiwgbWV0aG9kID0gJ2Nvc2luZScpXG5gYGAifQ== -->
+<pre class="r"><code>stringsim(string_last_20_doc1, string_last_20_doc2, q=2, method = 'cosine')</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNDczOTQ5OFxuIn0= -->
+<pre><code>[1] 0.4739498</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1dlIGhhdmUgb25seSB0d28gZG9jdW1lbnRzIGhlcmUuIEZvciBtb3JlIHRoYW4gdHdvIHlvdSBjYW4gY2hlY2sgd2hldGhlciB0aGUgb3JkZXIgb2YgcHJveGltaXR5IGZvciB0aGUgRXVjbGlkZWFuIG1lYXN1cmUgaXMgdGhlIHNhbWUgYXMgdGhlIG9yZGVyIG9mIGNvc2luZSBzaW1pbGFyaXR5IChpLmUuIGFyZSB0aG9zZSB3aG8gYXJlIGNsb3Nlc3QgdG8gb25lIGFub3RoZXIgYWxzbyB0aGUgbW9zdCBzaW1pbGFyPylcbmBgYCJ9 -->
+<pre class="r"><code>#We have only two documents here. For more than two you can check whether the order of proximity for the Euclidean measure is the same as the order of cosine similarity (i.e. are those who are closest to one another also the most similar?)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -320,8 +409,57 @@ $(document).ready(function () {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKCcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9HaXRIdWIvcl9oZWxwZXJfZnVuY3Rpb25zL2luaXRfZ2xvdmUuUicpXG5cbiNmb3IgdGhlIDZCLzEwMGQgbW9kZWw6XG5pbml0X2dsb3ZlKGRpciA9ICcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9Eb2N1bWVudHMvZ2xvdmUnLCB3aGljaF9tb2RlbCA9ICc2QicsIGRpbT0xMDApXG5cbmNyaW1lXzEwMGQgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnY3JpbWUnLCBdKVxubWFjaGluZV8xMDBkID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ21hY2hpbmUnLCBdKVxuZ2lybF8xMDBkID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ2dpcmwnLCBdKVxubGVjdHVyZV8xMDBkID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ2xlY3R1cmUnLCBdKVxuXG4jdXNlIG91ciBjb3NpbmUgc2ltaWxhcml0eSBmdW5jdGlvblxuY29zc2ltID0gZnVuY3Rpb24oQSwgQil7XG4gIG51bWVyYXRvciA9IHN1bShBKkIpXG4gIGRlbm9taW5hdG9yID0gc3FydChzdW0oQSpBKSkqc3FydChzdW0oQipCKSlcbiAgY29zaW5lX3NpbSA9IG51bWVyYXRvci9kZW5vbWluYXRvclxuICByZXR1cm4oY29zaW5lX3NpbSlcbn1cblxuI3lvdSBjYW4gdGhlbiBjb21wYXJlIHRoZSB2ZWN0b3JzIHBhaXItd2lzZTpcbmNvc3NpbShjcmltZV8xMDBkLCBtYWNoaW5lXzEwMGQpXG5jb3NzaW0oY3JpbWVfMTAwZCwgZ2lybF8xMDBkKVxuY29zc2ltKGNyaW1lXzEwMGQsIGxlY3R1cmVfMTAwZClcbmBgYCJ9 -->
+<pre class="r"><code>source('/Users/bennettkleinberg/GitHub/r_helper_functions/init_glove.R')
+
+#for the 6B/100d model:
+init_glove(dir = '/Users/bennettkleinberg/Documents/glove', which_model = '6B', dim=100)
+
+crime_100d = as.vector(glove.pt[row.names(glove.pt) == 'crime', ])
+machine_100d = as.vector(glove.pt[row.names(glove.pt) == 'machine', ])
+girl_100d = as.vector(glove.pt[row.names(glove.pt) == 'girl', ])
+lecture_100d = as.vector(glove.pt[row.names(glove.pt) == 'lecture', ])
+
+#use our cosine similarity function
+cossim = function(A, B){
+  numerator = sum(A*B)
+  denominator = sqrt(sum(A*A))*sqrt(sum(B*B))
+  cosine_sim = numerator/denominator
+  return(cosine_sim)
+}
+
+#you can then compare the vectors pair-wise:
+cossim(crime_100d, machine_100d)
+cossim(crime_100d, girl_100d)
+cossim(crime_100d, lecture_100d)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI25vdyB3ZSByZWRvIHRoZXNlIHN0ZXBzIHdpdGggYSBkaWZmZXJlbnQgcHJlLXRyYWluZWQgbW9kZWxcblxuI2ZvciB0aGUgNkIvMTAwZCBtb2RlbDpcbmluaXRfZ2xvdmUoZGlyID0gJy9Vc2Vycy9iZW5uZXR0a2xlaW5iZXJnL0RvY3VtZW50cy9nbG92ZScsIHdoaWNoX21vZGVsID0gJzZCJywgZGltPTUwKVxuXG5jcmltZV8xMDBkID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ2NyaW1lJywgXSlcbm1hY2hpbmVfMTAwZCA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdtYWNoaW5lJywgXSlcbmdpcmxfMTAwZCA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdnaXJsJywgXSlcbmxlY3R1cmVfMTAwZCA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdsZWN0dXJlJywgXSlcblxuI3VzZSBvdXIgY29zaW5lIHNpbWlsYXJpdHkgZnVuY3Rpb25cbmNvc3NpbSA9IGZ1bmN0aW9uKEEsIEIpe1xuICBudW1lcmF0b3IgPSBzdW0oQSpCKVxuICBkZW5vbWluYXRvciA9IHNxcnQoc3VtKEEqQSkpKnNxcnQoc3VtKEIqQikpXG4gIGNvc2luZV9zaW0gPSBudW1lcmF0b3IvZGVub21pbmF0b3JcbiAgcmV0dXJuKGNvc2luZV9zaW0pXG59XG5cbiN5b3UgY2FuIHRoZW4gY29tcGFyZSB0aGUgdmVjdG9ycyBwYWlyLXdpc2U6XG5jb3NzaW0oY3JpbWVfMTAwZCwgbWFjaGluZV8xMDBkKVxuY29zc2ltKGNyaW1lXzEwMGQsIGdpcmxfMTAwZClcbmNvc3NpbShjcmltZV8xMDBkLCBsZWN0dXJlXzEwMGQpXG5gYGAifQ== -->
+<pre class="r"><code>#now we redo these steps with a different pre-trained model
+
+#for the 6B/100d model:
+init_glove(dir = '/Users/bennettkleinberg/Documents/glove', which_model = '6B', dim=50)
+
+crime_100d = as.vector(glove.pt[row.names(glove.pt) == 'crime', ])
+machine_100d = as.vector(glove.pt[row.names(glove.pt) == 'machine', ])
+girl_100d = as.vector(glove.pt[row.names(glove.pt) == 'girl', ])
+lecture_100d = as.vector(glove.pt[row.names(glove.pt) == 'lecture', ])
+
+#use our cosine similarity function
+cossim = function(A, B){
+  numerator = sum(A*B)
+  denominator = sqrt(sum(A*A))*sqrt(sum(B*B))
+  cosine_sim = numerator/denominator
+  return(cosine_sim)
+}
+
+#you can then compare the vectors pair-wise:
+cossim(crime_100d, machine_100d)
+cossim(crime_100d, girl_100d)
+cossim(crime_100d, lecture_100d)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -331,14 +469,60 @@ $(document).ready(function () {
 <h2>Task 3: Using word embeddings</h2>
 <p>Use the word embeddings you loaded in Task 3 and answer these questions with the appropriate arithmetic operations:</p>
 <ul>
-<li>Which embedding is closest to “LONDON”: “WESTMINSTER” or “ENGLAND”?</li>
-<li>What is the closest neighbour to the vector retrieved by calculating: “WOMAN” + “DOCTOR” - “MAN”? What did you expect?</li>
+<li>Which embedding is closer to “LONDON”: “WESTMINSTER” or “ENGLAND”?</li>
+<li>What is the closest neighbour to the vector retrieved by calculating: “DOCTOR” - “MAN” + “WOMAN”? What did you expect?</li>
 <li>In the Twitter pre-trained model, which concept is closest in the vector space to “SUCCESS”?</li>
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBjb21lcyBoZXJlXG5gYGAifQ== -->
-<pre class="r"><code>#Your code comes here</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIzEuXG5sb25kb25fZW1iID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ2xvbmRvbicsIF0pXG53ZXN0bWluc3Rlcl9lbWIgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnd2VzdG1pbnN0ZXInLCBdKVxuZW5nbGFuZF9lbWIgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnZW5nbGFuZCcsIF0pXG5cbmNvc3NpbShsb25kb25fZW1iLCB3ZXN0bWluc3Rlcl9lbWIpXG5jb3NzaW0obG9uZG9uX2VtYiwgZW5nbGFuZF9lbWIpXG5cbiNBbnN3ZXI6IFwiRW5nbGFuZFwiIGlzIGNsb3NlciB0byBcIkxvbmRvblwiIHRoYW4gXCJXZXN0bWluc3RlclwiXG5gYGAifQ== -->
+<pre class="r"><code>#1.
+london_emb = as.vector(glove.pt[row.names(glove.pt) == 'london', ])
+westminster_emb = as.vector(glove.pt[row.names(glove.pt) == 'westminster', ])
+england_emb = as.vector(glove.pt[row.names(glove.pt) == 'england', ])
+
+cossim(london_emb, westminster_emb)
+cossim(london_emb, england_emb)
+
+#Answer: &quot;England&quot; is closer to &quot;London&quot; than &quot;Westminster&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIzIuXG5pbml0X2dsb3ZlKGRpciA9ICcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9Eb2N1bWVudHMvZ2xvdmUnLCB3aGljaF9tb2RlbCA9ICc2QicsIGRpbT0xMDApXG53b21hbl9lbWIgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnd29tYW4nLCBdKVxuZG9jdG9yX2VtYiA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdkb2N0b3InLCBdKVxubWFuX2VtYiA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdtYW4nLCBdKVxuXG5teXN0ZXJ5X3ZlY3RvciA9IGRvY3Rvcl9lbWIgLSBtYW5fZW1iICsgd29tYW5fZW1iXG5cbiN0byBjYWxjdWxhdGUgdmVjdG9yIHByb3hpbWl0eSB3aXRobnRoZSBnbG92ZS5wdCBkZm0sIHdlIG5lZWQgdG8gYWRkIHRoZSBteXN0ZXJ5IHZlY3RvciB0byB0aGUgZGZtOlxuXG5teXN0ZXJ5ID0gZGF0YS5mcmFtZShtYXRyaXgobXlzdGVyeV92ZWN0b3IsIG5yb3cgPSAxLCBieXJvdyA9IEYpKVxubmFtZXMobXlzdGVyeSkgPSBwYXN0ZSgndmVjXycsIDE6MTAwLCBzZXA9XCJcIilcbnEgPSBhcy5kZm0obXlzdGVyeSlcbmdsb3ZlLnB0MiA9IHJiaW5kKGdsb3ZlLnB0LCBxKVxucm93Lm5hbWVzKGdsb3ZlLnB0MilbNDAwMDAxXSA9IGMoJ215c3RlcnlfMScpXG5jb3Nfc2ltX3ZhbHMgPSB0ZXh0c3RhdF9zaW1pbChnbG92ZS5wdDJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICwgc2VsZWN0aW9uID0gYyhcIm15c3RlcnlfMVwiKVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLCBtYXJnaW4gPSBcImRvY3VtZW50c1wiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAsIG1ldGhvZCA9IFwiY29zaW5lXCIpXG5cbmhlYWQoc29ydChjb3Nfc2ltX3ZhbHNbLDFdLCBkZWNyZWFzaW5nID0gVFJVRSksIDEwKVxuYGBgIn0= -->
+<pre class="r"><code>#2.
+init_glove(dir = '/Users/bennettkleinberg/Documents/glove', which_model = '6B', dim=100)
+woman_emb = as.vector(glove.pt[row.names(glove.pt) == 'woman', ])
+doctor_emb = as.vector(glove.pt[row.names(glove.pt) == 'doctor', ])
+man_emb = as.vector(glove.pt[row.names(glove.pt) == 'man', ])
+
+mystery_vector = doctor_emb - man_emb + woman_emb
+
+#to calculate vector proximity withnthe glove.pt dfm, we need to add the mystery vector to the dfm:
+
+mystery = data.frame(matrix(mystery_vector, nrow = 1, byrow = F))
+names(mystery) = paste('vec_', 1:100, sep=&quot;&quot;)
+q = as.dfm(mystery)
+glove.pt2 = rbind(glove.pt, q)
+row.names(glove.pt2)[400001] = c('mystery_1')
+cos_sim_vals = textstat_simil(glove.pt2
+                              , selection = c(&quot;mystery_1&quot;)
+                              , margin = &quot;documents&quot;
+                              , method = &quot;cosine&quot;)
+
+head(sort(cos_sim_vals[,1], decreasing = TRUE), 10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29zX3NpbV92YWxzID0gdGV4dHN0YXRfc2ltaWwoZ2xvdmUucHRcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICwgc2VsZWN0aW9uID0gYyhcInN1Y2Nlc3NcIilcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICwgbWFyZ2luID0gXCJkb2N1bWVudHNcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLCBtZXRob2QgPSBcImNvc2luZVwiKVxuaGVhZChzb3J0KGNvc19zaW1fdmFsc1ssMV0sIGRlY3JlYXNpbmcgPSBUUlVFKSwgNTApXG5gYGAifQ== -->
+<pre class="r"><code>cos_sim_vals = textstat_simil(glove.pt
+                              , selection = c(&quot;success&quot;)
+                              , margin = &quot;documents&quot;
+                              , method = &quot;cosine&quot;)
+head(sort(cos_sim_vals[,1], decreasing = TRUE), 50)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -417,7 +601,7 @@ vector_2 = c(13, 1, 5, 7, 340)</code></pre>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiVHV0b3JpYWwsIFdlZWsgNTogVGV4dCBtaW5pbmcgMyIKc3VidGl0bGU6ICJTRUNVMDA1MCIKYXV0aG9yOiAiQiBLbGVpbmJlcmciCmRhdGU6ICIxMyBGZWIgMjAyMCIKb3V0cHV0OiBodG1sX25vdGVib29rCnVybGNvbG9yOiBibHVlCi0tLQoKQWltcyBvZiB0aGlzIHR1dG9yaWFsOgoKLSBhc3Nlc3NpbmcgdGhlIHNpbWlsYXJpdHkgb2YgeW91ciBvd24gd3JpdHRlbiBjb3Vyc2V3b3JrCi0gbG9hZGluZyBhbmQgd29ya2luZyB3aXRoIHdvcmQgZW1iZWRkaW5ncyBpbiBSCgpfTm90ZTogdGhpcyB0dXRvcmlhbCBhc3N1bWVzIHRoYXQgeW91IGhhdmUgaW5zdGFsbGVkIHRoZSBgc3RpbmdkaXN0YCBwYWNrYWdlIGFuZCBoYXZlIGRvd25sb2FkZWQgdGhlIGdsb3ZlIHByZXRyYWluZWQgbW9kZWxzLl8KCiMjIFRhc2sgMTogVGV4dCBzaW1pbGFyaXR5IGFuZCBuZ3JhbXMgb24geW91ciBvd24gY291cnNld29yawoKVGFrZSBhIGNvbGxlY3Rpb24gb2YgeW91ciBjb3Vyc2V3b3JrIGluIHlvdXIgc3R1ZHkgcHJvZ3JhbW1lIHNvIGZhciAob3Igb3RoZXIgY291cnNld29yayB5b3UgaGFuZGVkIGluKS4gUmVhZCB0aGUgZmlsZXMgaW50byBSIGFuZCBjcmVhdGUgYSBjb3JwdXMgb2JqZWN0IGZyb20gaXQuCgpgYGB7cn0KI1lvdXIgY29kZSBjb21lcyBoZXJlCmBgYAoKVXNlIHRoZSBkYXRhIHlvdSBoYXZlIGxvYWRlZCB0byBhbnN3ZXIgdGhlIGZvbGxvd2luZyB0aHJlZSBxdWVzdGlvbnM6CgoxLiBXaGljaCB1bmlncmFtIGFuZCB3aGljaCBiaWdyYW0gZGlkIHlvdSB1c2UgdGhlIG1vc3Qgb2Z0ZW4gaW4gdGhlIHdob2xlIGNvcnB1cz8KCmBgYHtyfQojWW91ciBjb2RlIGNvbWVzIGhlcmUKYGBgCgoyLiBPZiBhbGwgZG9jdW1lbnRzLCBleHRyYWN0IHRoZSBmaXJzdCA1MCB3b3Jkcy4gV2hpY2ggZG9jdW1lbnRzIGhhdmUgdGhlIGdyZWF0ZXN0IHNpbWlsYXJpdHkgb24gdGhlc2UgZmlyc3QgNTAgd29yZHM/IFVzZSB0aGUgTGV2ZW5zaHRlaW4gZGlzdGFuY2UuCgpgYGB7cn0KI1lvdXIgY29kZSBjb21lcyBoZXJlCmBgYAoKMy4gTm93IHRha2UgdGhlIGxhc3QgMjAgd29yZHMgb2YgZWFjaCBkb2N1bWVudCBhbmQgY2FsY3VsYXRlIHRoZSBFdWNsaWRlYW4tYmFzZWQgc2ltaWxhcml0eSBmb3IgYWxsIGRvY3VtZW50cyB1c2luZyBxLWdyYW1zIHdpdGggJHEgPSAyJC4gV2hpY2ggdHdvIGRvY3VtZW50cyBoYXZlIHRoZSBoaWdoZXN0IHNpbWlsYXJpdHk/IF8oSGludDogeW91IGNhbiBiZXN0IHVzZSBhIG1hdHJpeCB0byBjYWxjdWxhdGUgc2ltaWxhcml0eSBmb3IgYWxsIHZlY3RvcnMgYXQgb25jZSlfCgpgYGB7cn0KI1lvdXIgY29kZSBjb21lcyBoZXJlCmBgYAoKNC4gIERvZXMgdGhlIGNvc2luZSBzaW1pbGFyaXR5IGNvbmZpcm0gdGhlIGZpbmRpbmcgZnJvbSAoMyk/CgpgYGB7cn0KI1lvdXIgY29kZSBjb21lcyBoZXJlCmBgYAoKIyMgVGFzayAyOiBXb3JkIGVtYmVkZGluZ3Mgd2l0aCBHbG92ZSBpbiBSCgpXb3JkIGVtYmVkZGluZ3MgYXJlIGFtb25nIHRoZSBtb3N0IGludGVyZXN0aW5nIGRldmVsb3BtZW50cyBpbiBOTFAgaW4gdGhlIHBhc3QgZGVjYWRlLiBVc2luZyB0aGVtIGluIFIgaXMgcmVsYXRpdmVseSBlYXN5IG9uY2UgeW91IGhhdmUgZG9uZSB0aGUgc2V0dXAgcmlnaHQuIFRoZSB0cmlja3kgcGFydCBpcyB0aGUgY29tcHV0YXRpb25hbGx5IGhlYXZ5IGxvYWQgb2YgdGhlIHByZS10cmFpbmVkIG1vZGVscyAod2UgZG8gbm90IGNvdmVyIGN1c3RvbSB0cmFpbmluZyBvciByZS10cmFpbmluZyBvZiBvdXIgb3duIG1vZGVscyBpbiB0aGlzIG1vZHVsZSkuCgpXZSByYW4gYSB0dXRvcmlhbCBvbiB3b3JkIGVtYmVkZGluZ3MgYXQgYSBjb21wdXRhdGlvbmFsIHNvY2lhbCBzY2llbmNlIHdvcmtzaG9wLiBVc2UgdGhpcyB0dXRvcmlhbCB0byBzdGFydCB3aXRoIHdvcmQgZW1iZWRkaW5ncyBpbiBSLgoKLSBUdXRvcmlhbDogW2h0dHBzOi8vcmF3LmdpdGhhY2suY29tL21heGltaWxpYW5tb3plcy93b3JkX2VtYmVkZGluZ3Nfd29ya3Nob3BfcmVzb3VyY2VzL21hc3Rlci9jb2RlL1IvZ2xvdmVfaW5fUi5odG1sXShodHRwczovL3Jhdy5naXRoYWNrLmNvbS9tYXhpbWlsaWFubW96ZXMvd29yZF9lbWJlZGRpbmdzX3dvcmtzaG9wX3Jlc291cmNlcy9tYXN0ZXIvY29kZS9SL2dsb3ZlX2luX1IuaHRtbCkgLSB5b3UgY2FuIGRvIHRoYXQgdHV0b3JpYWwgaW4gdGhlIGRlZGljYXRlZCBmaWxlLgoKT25jZSB5b3UgaGF2ZSBkb25lIHRoaXMsIHVzZSB0aGUgYGluaXRfZ2xvdmUoLi4uKWAgZnVuY3Rpb24gdG8gbG9hZCBkaWZmZXJlbnQgbW9kZWxzIHdpdGggZGlmZmVyZW50IGRpbWVuc2lvbnMuIAoKX05vdGU6IHRoZSBiaWdnZXIgdGhlIG1vZGVsIGFuZCB0aGUgaGlnaGVyIHRoZSBkaW1lbnNpb25zLCB0aGUgYmlnZ2VyIHRoZSBmaWxlIHlvdSB3aWxsIGxvYWQgaW50byB5b3VyIGNvbXB1dGVyJ3MgbWVtb3J5LiBUb28gYmlnIGZpbGVzIHdpbGwgc2xvdyBkb25lIHlvdXIgbWFjaGluZS4gSWYgeW91IGhhdmUgYW4gOCBHQiBtZW1vcnksIHlvdSBzaG91bGQgYmUgZmluZSBpbiB1c2luZyB0aGUgNkIgbW9kZWxzICh3aXRoIGFsbCBkaW1lbnNpb25zKSBhbmQgdGhlIDJCIFR3aXR0ZXIgbW9kZWwuIERvIG5vdCB1c2UgdGhlIDQyQiBvciBoaWdoZXIgbW9kZWxzIHVubGVzcyB5b3UgaGF2ZSBnb3QgYXQgbGVhc3QgMTYgR0IgUkFNLl8KCkRvIHRoZSB2ZWN0b3Igc2ltaWxhcml0aWVzIGZvciB0aGUgZm9sbG93aW5nIHdvcmRzIGRpZmZlciBpZiB5b3UgbG9hZCBkaWZmZXJlbnQgbW9kZWxzPwoKLSBjcmltZQotIG1hY2hpbmUKLSBnaXJsCi0gbGVjdHVyZQoKCmBgYHtyfQojWW91ciBjb2RlIGNvbWVzIGhlcmUKYGBgCgpEbyB0aGVzZSBmaW5kaW5ncyBzdXJwcmlzZSB5b3U/CgojIyBUYXNrIDM6IFVzaW5nIHdvcmQgZW1iZWRkaW5ncwoKVXNlIHRoZSB3b3JkIGVtYmVkZGluZ3MgeW91IGxvYWRlZCBpbiBUYXNrIDMgYW5kIGFuc3dlciB0aGVzZSBxdWVzdGlvbnMgd2l0aCB0aGUgYXBwcm9wcmlhdGUgYXJpdGhtZXRpYyBvcGVyYXRpb25zOgoKLSBXaGljaCBlbWJlZGRpbmcgaXMgY2xvc2VzdCB0byAiTE9ORE9OIjogIldFU1RNSU5TVEVSIiBvciAiRU5HTEFORCI/Ci0gV2hhdCBpcyB0aGUgY2xvc2VzdCBuZWlnaGJvdXIgdG8gdGhlIHZlY3RvciByZXRyaWV2ZWQgYnkgY2FsY3VsYXRpbmc6ICJXT01BTiIgKyAiRE9DVE9SIiAtICJNQU4iPyBXaGF0IGRpZCB5b3UgZXhwZWN0PwotIEluIHRoZSBUd2l0dGVyIHByZS10cmFpbmVkIG1vZGVsLCB3aGljaCBjb25jZXB0IGlzIGNsb3Nlc3QgaW4gdGhlIHZlY3RvciBzcGFjZSB0byAiU1VDQ0VTUyI/CgpgYGB7cn0KI1lvdXIgY29kZSBjb21lcyBoZXJlCmBgYAoKCiMjIFRhc2sgNDogKGFkdmFuY2VkKSB0cmFpbiB3b3JkIGVtYmVkZGluZ3Mgb24geW91ciBvd24gbWluaS1jb3JwdXMKCl9UaGlzIHRhc2sgaXMgcmVsYXRlZCB0byBhbmQgYW4gZXh0ZW5zaW9uIG9mIHRoZSBob21ld29yayBQYXJ0IDEgYmVsb3cuXwoKUmVtZW1iZXIgaG93IHdlIHVzZWQgcHJlLXRyYWluZWQgbW9kZWxzIHNvIGZhcj8gWW91IGNhbiB0cmFpbiB5b3VyIG93biBtb2RlbHMgd2hpY2ggbWlnaHQgYmUgYSBnb29kIG9wdGlvbiBpZiB5b3UgYXJlIGludGVyZXN0ZWQgaW4gYSBtb3JlIGxvY2FsaXNlZCBsYW5ndWFnZSBwaGVub21lbm9uLiBBIG1ham9yIGRvd25zaWRlIGlzIG9mIGNvdXJzZSB0aGUgc2l6ZSBvZiB0aGUgY29ycG9yYSB1c2VkIGZvciB0cmFpbmluZy4gQ29tbW9uIHNpemVzIHVzZWQgaW4gdGhlIHByb3ZpZGVkIHByZS10cmFpbmVkIG1vZGVscyBhcmUgODQwIGJpbGxpb24gZG9jdW1lbnRzLCBmb3IgZXhhbXBsZS4KCkZvciBub3csIGNvbGxhdGUgYSBtaW5pLWNvcnB1cyBvZiB0ZXh0cyB0aGF0IHlvdSBoYXZlIHdyaXR0ZW4uIENyZWF0ZSBhIGBjb3JwdXNgIG9iamVjdC4KCmBgYHtyfQojWW91ciBjb2RlIGhlcmUKYGBgCgoKTm93IHlvdSBjYW4gdXNlIHRoYXQgY29ycHVzIHRvIGNvbnN0cnVjdCBhIGNvLW9jY3VycmVuY2UgbWF0cml4IGFuZCBlbWJlZCB0aGUgcmVzdWx0aW5nIHZlY3RvcnMuIFRvIGRvIHRoaXMsIGZvbGxvdyB0aGUgc3RlcHMgaW4gdGhlIFtxdWFudGVkYSB0ZXh0MnZlY10oaHR0cHM6Ly9xdWFudGVkYS5pby9hcnRpY2xlcy9wa2dkb3duL3JlcGxpY2F0aW9uL3RleHQydmVjLmh0bWwpIHR1dG9yaWFsLgoKCmBgYHtyfQojWW91ciBjb2RlIGhlcmUKYGBgCgoKSW4geW91ciBjb3Vyc2V3b3JrIGNvcnB1cywgd2hpY2ggd29yZCBpcyB0aGUgY2xvc2VzdCBpbiBjb3NpbmUgc2ltaWxhcml0eSB0byB0aGUgd29yZCAiY3JpbWUiPwoKCmBgYHtyfQojWW91ciBjb2RlIGhlcmUKYGBgCgotLS0KCiMjIEhvbWV3b3JrCgojIyMgUGFydCAxOiB0ZXh0MnZlYyBpbiBxdWFudGVkYQoKVGhlIHBhY2thZ2UgcXVhbnRlZGEgYWxzbyBjb250YWlucyBzb21lIGZ1bmN0aW9uYWxpdHkgdGhhdCBjYW4gYmUgdXNlZCB0byB3b3JrIHdpdGggd29yZCBlbWJlZGRpbmdzLiBSZXBsaWNhdGUgdGhlIHR1dG9yaWFsIGJlbG93IGFuZCBhZGQgc29tZSB3b3JkIGFyaXRobWV0aWNzIG9uIHlvdXIgb3duLgoKVHV0b3JpYWwgbGluazogW1F1YW50ZWRhIHRleHQydmVjXShodHRwczovL3F1YW50ZWRhLmlvL2FydGljbGVzL3BrZ2Rvd24vcmVwbGljYXRpb24vdGV4dDJ2ZWMuaHRtbCkKCgojIyMgUGFydCAyOiBQcmFjdGlzaW5nIGN1c3RvbSBmdW5jdGlvbnMgaW4gUgoKRm9yIHlvdXIgZGF0YSBzY2llbmNlIHNraWxsc2V0IGl0IGlzIGVzc2VudGlhbCB0aGF0IHlvdSBiZWNvbWUgY29tZm9ydGFibGUgd3JpdGluZyB5b3VyIG93biBmdW5jdGlvbnMuIFdlIGhhdmUgd2Fsa2VkIHRocm91Z2ggYSBmZXcgZXhhbXBsZXMgaW4gdGhlIGxlY3R1cmVzIHNvIGZhci4gCgpOb3c6IHdyaXRlIGEgZnVuY3Rpb24gdGhhdCByZXR1cm5zIHRoZSBFdWNsaWRlYW4gZGlzdGFuY2Ugb2YgdHdvIHZlY3RvcnMgcmVwcmVzZW50ZWQgaW4gYSA1LWRpbWVuc2lvbmFsIHNwYWNlLiBDYWxsIHRoYXQgZnVuY3Rpb24gYGV1Y2xpZGVhbl81X2RpbWAuCgoKYGBge3J9CiNZb3VyIGNvZGUgaGVyZQpgYGAKClRlc3QgeW91ciBmdW5jdGlvbiB3aXRoIHRoZSB0d28gdmVjdG9ycyBiZWxvdzoKCmBgYHtyfQp2ZWN0b3JfMSA9IGMoMywgNSwgMSwgNjUsIDkwMCkKdmVjdG9yXzIgPSBjKDEzLCAxLCA1LCA3LCAzNDApCmBgYAoKCiMjIyBQYXJ0IDM6IE5leHQgc3RlcHMgZm9yIHlvdXIgcHJvamVjdAoKT3ZlciB0aGUgcmVhZGluZyB3ZWVrLCB5b3Ugd2lsbCBoYXZlIHNvbWUgdGltZSB0byB0aGluayBpbiBtb3JlIGRldGFpbCBhYm91dCB5b3VyIHByb2plY3QuIEFmdGVyIHRoZSByZWFkaW5nIHdlZWssIHlvdSBhcmUgYXNrZWQgdG8gaGFuZCBpbiB5b3VyIGNvbmNlcHQgZHJhZnQuIFN0YXJ0IHdvcmtpbmcgb24gdGhlIHBhcnRzIHRoYXQgeW91IGFyZSBhbHJlYWR5IGNsZWFyIGFib3V0LgoKIyMjIFBhcnQgNDogUGFja2FnZXMgZm9yIHRoZSBuZXh0IHNlc3Npb24KCkluc3RhbGwgdGhlIGZvbGxvd2luZyBwYWNrYWdlczoKCi0gY2FyZXQKLSBwUk9DCgotLS0K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiVHV0b3JpYWwsIFdlZWsgNTogVGV4dCBtaW5pbmcgMyIKc3VidGl0bGU6ICJTRUNVMDA1MCIKYXV0aG9yOiAiQiBLbGVpbmJlcmciCmRhdGU6ICIxMyBGZWIgMjAyMCIKb3V0cHV0OiBodG1sX25vdGVib29rCnVybGNvbG9yOiBibHVlCi0tLQoKQWltcyBvZiB0aGlzIHR1dG9yaWFsOgoKLSBhc3Nlc3NpbmcgdGhlIHNpbWlsYXJpdHkgb2YgeW91ciBvd24gd3JpdHRlbiBjb3Vyc2V3b3JrCi0gbG9hZGluZyBhbmQgd29ya2luZyB3aXRoIHdvcmQgZW1iZWRkaW5ncyBpbiBSCgpfTm90ZTogdGhpcyB0dXRvcmlhbCBhc3N1bWVzIHRoYXQgeW91IGhhdmUgaW5zdGFsbGVkIHRoZSBgc3RpbmdkaXN0YCBwYWNrYWdlIGFuZCBoYXZlIGRvd25sb2FkZWQgdGhlIGdsb3ZlIHByZXRyYWluZWQgbW9kZWxzLl8KCiMjIFRhc2sgMTogVGV4dCBzaW1pbGFyaXR5IGFuZCBuZ3JhbXMgb24geW91ciBvd24gY291cnNld29yawoKVGFrZSBhIGNvbGxlY3Rpb24gb2YgeW91ciBjb3Vyc2V3b3JrIGluIHlvdXIgc3R1ZHkgcHJvZ3JhbW1lIHNvIGZhciAob3Igb3RoZXIgY291cnNld29yayB5b3UgaGFuZGVkIGluKS4gUmVhZCB0aGUgZmlsZXMgaW50byBSIGFuZCBjcmVhdGUgYSBjb3JwdXMgb2JqZWN0IGZyb20gaXQuCgpgYGB7ciBlY2hvPVRSVUV9CiNIZXJlIHdlIGxvYWQgdHdvIHdvcmQgZG9jdW1lbnRzICh3b3JkIGZpbGVzIGZvciBwYXBlciBzdWJtaXNzaW9ucykKI0Jlc3QgdXNlIHRoZSByZWFkdGV4dCBwYWNrYWdlIHRvIHJlYWQgdGhlIGZpbGVzIGFuZCB0aGVuIGNvbnN0cnVjdCBhIGNvcnB1cyB1c2luZyB0aGUgdHlwaWNhbCBxdWFudGVkYSBwcm9jZWR1cmUuCgpsaWJyYXJ5KHJlYWR0ZXh0KQpsaWJyYXJ5KHF1YW50ZWRhKQpgYGAKCmBgYHtyfQpkb2MxID0gcmVhZHRleHQoJy9Vc2Vycy9iZW5uZXR0a2xlaW5iZXJnL0Ryb3Bib3gvcmVzZWFyY2gvdWNsL2FidXNpdmVfbGFuZ3VhZ2UvcGFwZXIvbHRhX3BhcGVyX2pjc3Nfc3VibWlzc2lvbi5kb2N4JykKZG9jMiA9IHJlYWR0ZXh0KCcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9Ecm9wYm94L3Jlc2VhcmNoL3VjbC9nYW5nX3Zpb2xlbmNlL3BhcGVyL3BhcGVyMi9zZW50aW1lbnRfZHJpbGxfbXVzaWNfa2xlaW5iZXJnX21jZmFybGFuZS5kb2N4JykKYGBgCgpgYGB7cn0KI05vdGUgdGhhdCB0aGUgdGV4dCBuZWVkZWQgZm9yIHRoZSBjb3JwdXMgaXMgbG9jYXRlZCBpbiB0aGUgYHRleHRgIGNvbHVtbgpteV9kb2NzX2NvcnB1cyA9IGNvcnB1cyhjKGRvYzEkdGV4dCwgZG9jMiR0ZXh0KSkKYGBgCgoKVXNlIHRoZSBkYXRhIHlvdSBoYXZlIGxvYWRlZCB0byBhbnN3ZXIgdGhlIGZvbGxvd2luZyB0aHJlZSBxdWVzdGlvbnM6CgoxLiBXaGljaCB1bmlncmFtIGFuZCB3aGljaCBiaWdyYW0gZGlkIHlvdSB1c2UgdGhlIG1vc3Qgb2Z0ZW4gaW4gdGhlIHdob2xlIGNvcnB1cz8KCmBgYHtyfQp1bmlncmFtcyA9IGRmbShteV9kb2NzX2NvcnB1cwogICAgICAgICAgICAgICAsIHRvbG93ZXIgPSBUCiAgICAgICAgICAgICAgICwgcmVtb3ZlID0gc3RvcHdvcmRzKCkKICAgICAgICAgICAgICAgLCByZW1vdmVfcHVuY3QgPSBUCiAgICAgICAgICAgICAgICwgbmdyYW1zID0gMSkKYmlncmFtcyA9IGRmbShteV9kb2NzX2NvcnB1cwogICAgICAgICAgICAgICAsIHRvbG93ZXIgPSBUCiAgICAgICAgICAgICAgICwgcmVtb3ZlID0gc3RvcHdvcmRzKCkKICAgICAgICAgICAgICAgLCByZW1vdmVfcHVuY3QgPSBUCiAgICAgICAgICAgICAgICwgbmdyYW1zID0gMikKYGBgCgoKCmBgYHtyfQp0b3BmZWF0dXJlcyh1bmlncmFtcykKI05vdGUgdGhhdCB0aGVzZSBuZ3JhbXMgYXJlIGR1ZSB0byBlbWJlZGRlZCBtZXRhIGRhdGEgaW4gdGhlIHJlZmVyZW5jaW5nLgpgYGAKCmBgYHtyfQp0b3BmZWF0dXJlcyhiaWdyYW1zKQpgYGAKCgoyLiBPZiBhbGwgZG9jdW1lbnRzLCBleHRyYWN0IHRoZSBmaXJzdCA1MCB3b3Jkcy4gV2hpY2ggZG9jdW1lbnRzIGhhdmUgdGhlIGdyZWF0ZXN0IHNpbWlsYXJpdHkgb24gdGhlc2UgZmlyc3QgNTAgd29yZHM/IFVzZSB0aGUgTGV2ZW5zaHRlaW4gZGlzdGFuY2UuCgpgYGB7cn0Kd29yZHNfNTBfZG9jMSA9IHRva2Vucyhkb2MxJHRleHQsIHJlbW92ZV9wdW5jdCA9IFQpCndvcmRzXzUwX2RvYzEgPSB3b3Jkc181MF9kb2MxJHRleHQxWzE6NTBdCiMgZm9yIHN0cmluZ3NpbSB3ZSBuZWVkIHRoZSB3b3JkcyBjb25jYXRlbmF0ZWQgaW50byBvbmUgc3RyaW5nOgpzdHJpbmdfd29yZHNfNTBfZG9jMSA9IHBhc3RlKHdvcmRzXzUwX2RvYzEsIGNvbGxhcHNlID0gJyAnKQoKCndvcmRzXzUwX2RvYzIgPSB0b2tlbnMoZG9jMiR0ZXh0LCByZW1vdmVfcHVuY3QgPSBUKQp3b3Jkc181MF9kb2MyID0gd29yZHNfNTBfZG9jMiR0ZXh0MVsxOjUwXQpzdHJpbmdfd29yZHNfNTBfZG9jMiA9IHBhc3RlKHdvcmRzXzUwX2RvYzIsIGNvbGxhcHNlID0gJyAnKQoKCmxpYnJhcnkoc3RyaW5nZGlzdCkKCnN0cmluZ3NpbShzdHJpbmdfd29yZHNfNTBfZG9jMSwgc3RyaW5nX3dvcmRzXzUwX2RvYzIsIG1ldGhvZCA9ICdsdicpCmBgYAoKMy4gTm93IHRoYXQgdGhlIGxhc3QgMjAgd29yZHMgb2YgZWFjaCBkb2N1bWVudCBhbmQgY2FsY3VsYXRlIHRoZSBFdWNsaWRlYW4tYmFzZWQgc2ltaWxhcml0eSBmb3IgYWxsIGRvY3VtZW50cyB1c2luZyBxLWdyYW1zIHdpdGggJHEgPSAyJC4gV2hpY2ggdHdvIGRvY3VtZW50cyBoYXZlIHRoZSBoaWdoZXN0IHNpbWlsYXJpdHk/IF8oSGludDogeW91IGNhbiBiZXN0IHVzZSBhIG1hdHJpeCB0byBjYWxjdWxhdGUgc2ltaWxhcml0eSBmb3IgYWxsIHZlY3RvcnMgYXQgb25jZSlfCgpgYGB7cn0KbGFzdF8yMF9kb2MxID0gdG9rZW5zKGRvYzEkdGV4dCwgcmVtb3ZlX3B1bmN0ID0gVCkKbGFzdF8yMF9kb2MxID0gbGFzdF8yMF9kb2MxJHRleHQxWyhudG9rZW4obGFzdF8yMF9kb2MxKS0yMCk6bnRva2VuKGxhc3RfMjBfZG9jMSldCnN0cmluZ19sYXN0XzIwX2RvYzEgPSBwYXN0ZShsYXN0XzIwX2RvYzEsIGNvbGxhcHNlID0gJyAnKQoKCmxhc3RfMjBfZG9jMiA9IHRva2Vucyhkb2MyJHRleHQsIHJlbW92ZV9wdW5jdCA9IFQpCmxhc3RfMjBfZG9jMiA9IGxhc3RfMjBfZG9jMiR0ZXh0MVsobnRva2VuKGxhc3RfMjBfZG9jMiktMjApOm50b2tlbihsYXN0XzIwX2RvYzIpXQpzdHJpbmdfbGFzdF8yMF9kb2MyID0gcGFzdGUobGFzdF8yMF9kb2MyLCBjb2xsYXBzZSA9ICcgJykKCiNub3RlIHRoYXQgd2UgbmVlZCB0aGUgcWdyYW0gb3V0cHV0IGFzIGEgbWF0cml4IHRvIHVzZSB0aGUgYmFzZSBSIGBkaXN0YCBmdW5jdGlvbgpxZ3JhbXNfb3V0cHV0ID0gcWdyYW1zKHN0cmluZ19sYXN0XzIwX2RvYzEsIHN0cmluZ19sYXN0XzIwX2RvYzIsIHEgPSAyKQpkaXN0KHFncmFtc19vdXRwdXQsIG1ldGhvZCA9ICdldWNsaWRlYW4nKQpgYGAKCjQuICBEb2VzIHRoZSBjb3NpbmUgc2ltaWxhcml0eSBjb25maXJtIHRoZSBmaW5kaW5nIGZyb20gKDMpPwoKYGBge3J9CnN0cmluZ3NpbShzdHJpbmdfbGFzdF8yMF9kb2MxLCBzdHJpbmdfbGFzdF8yMF9kb2MyLCBxPTIsIG1ldGhvZCA9ICdjb3NpbmUnKQojV2UgaGF2ZSBvbmx5IHR3byBkb2N1bWVudHMgaGVyZS4gRm9yIG1vcmUgdGhhbiB0d28geW91IGNhbiBjaGVjayB3aGV0aGVyIHRoZSBvcmRlciBvZiBwcm94aW1pdHkgZm9yIHRoZSBFdWNsaWRlYW4gbWVhc3VyZSBpcyB0aGUgc2FtZSBhcyB0aGUgb3JkZXIgb2YgY29zaW5lIHNpbWlsYXJpdHkgKGkuZS4gYXJlIHRob3NlIHdobyBhcmUgY2xvc2VzdCB0byBvbmUgYW5vdGhlciBhbHNvIHRoZSBtb3N0IHNpbWlsYXI/KQoKYGBgCgojIyBUYXNrIDI6IFdvcmQgZW1iZWRkaW5ncyB3aXRoIEdsb3ZlIGluIFIKCldvcmQgZW1iZWRkaW5ncyBhcmUgYW1vbmcgdGhlIG1vc3QgaW50ZXJlc3RpbmcgZGV2ZWxvcG1lbnRzIGluIE5MUCBpbiB0aGUgcGFzdCBkZWNhZGUuIFVzaW5nIHRoZW0gaW4gUiBpcyByZWxhdGl2ZWx5IGVhc3kgb25jZSB5b3UgaGF2ZSBkb25lIHRoZSBzZXR1cCByaWdodC4gVGhlIHRyaWNreSBwYXJ0IGlzIHRoZSBjb21wdXRhdGlvbmFsbHkgaGVhdnkgbG9hZCBvZiB0aGUgcHJlLXRyYWluZWQgbW9kZWxzICh3ZSBkbyBub3QgY292ZXIgY3VzdG9tIHRyYWluaW5nIG9yIHJlLXRyYWluaW5nIG9mIG91ciBvd24gbW9kZWxzIGluIHRoaXMgbW9kdWxlKS4KCldlIHJhbiBhIHR1dG9yaWFsIG9uIHdvcmQgZW1iZWRkaW5ncyBhdCBhIGNvbXB1dGF0aW9uYWwgc29jaWFsIHNjaWVuY2Ugd29ya3Nob3AuIFVzZSB0aGlzIHR1dG9yaWFsIHRvIHN0YXJ0IHdpdGggd29yZCBlbWJlZGRpbmdzIGluIFIuCgotIFR1dG9yaWFsOiBbaHR0cHM6Ly9yYXcuZ2l0aGFjay5jb20vbWF4aW1pbGlhbm1vemVzL3dvcmRfZW1iZWRkaW5nc193b3Jrc2hvcF9yZXNvdXJjZXMvbWFzdGVyL2NvZGUvUi9nbG92ZV9pbl9SLmh0bWxdKGh0dHBzOi8vcmF3LmdpdGhhY2suY29tL21heGltaWxpYW5tb3plcy93b3JkX2VtYmVkZGluZ3Nfd29ya3Nob3BfcmVzb3VyY2VzL21hc3Rlci9jb2RlL1IvZ2xvdmVfaW5fUi5odG1sKSAtIHlvdSBjYW4gZG8gdGhhdCB0dXRvcmlhbCBpbiB0aGUgZGVkaWNhdGVkIGZpbGUuCgpPbmNlIHlvdSBoYXZlIGRvbmUgdGhpcywgdXNlIHRoZSBgaW5pdF9nbG92ZSguLi4pYCBmdW5jdGlvbiB0byBsb2FkIGRpZmZlcmVudCBtb2RlbHMgd2l0aCBkaWZmZXJlbnQgZGltZW5zaW9ucy4gCgpfTm90ZTogdGhlIGJpZ2dlciB0aGUgbW9kZWwgYW5kIHRoZSBoaWdoZXIgdGhlIGRpbWVuc2lvbnMsIHRoZSBiaWdnZXIgdGhlIGZpbGUgeW91IHdpbGwgbG9hZCBpbnRvIHlvdXIgY29tcHV0ZXIncyBtZW1vcnkuIFRvbyBiaWcgZmlsZXMgd2lsbCBzbG93IGRvbmUgeW91ciBtYWNoaW5lLiBJZiB5b3UgaGF2ZSBhbiA4IEdCIG1lbW9yeSwgeW91IHNob3VsZCBiZSBmaW5lIGluIHVzaW5nIHRoZSA2QiBtb2RlbHMgKHdpdGggYWxsIGRpbWVuc2lvbnMpIGFuZCB0aGUgMkIgVHdpdHRlciBtb2RlbC4gRG8gbm90IHVzZSB0aGUgNDJCIG9yIGhpZ2hlciBtb2RlbHMgdW5sZXNzIHlvdSBoYXZlIGdvdCBhdCBsZWFzdCAxNiBHQiBSQU0uXwoKRG8gdGhlIHZlY3RvciBzaW1pbGFyaXRpZXMgZm9yIHRoZSBmb2xsb3dpbmcgd29yZHMgZGlmZmVyIGlmIHlvdSBsb2FkIGRpZmZlcmVudCBtb2RlbHM/CgotIGNyaW1lCi0gbWFjaGluZQotIGdpcmwKLSBsZWN0dXJlCgoKYGBge3J9CnNvdXJjZSgnL1VzZXJzL2Jlbm5ldHRrbGVpbmJlcmcvR2l0SHViL3JfaGVscGVyX2Z1bmN0aW9ucy9pbml0X2dsb3ZlLlInKQoKI2ZvciB0aGUgNkIvMTAwZCBtb2RlbDoKaW5pdF9nbG92ZShkaXIgPSAnL1VzZXJzL2Jlbm5ldHRrbGVpbmJlcmcvRG9jdW1lbnRzL2dsb3ZlJywgd2hpY2hfbW9kZWwgPSAnNkInLCBkaW09MTAwKQoKY3JpbWVfMTAwZCA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdjcmltZScsIF0pCm1hY2hpbmVfMTAwZCA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdtYWNoaW5lJywgXSkKZ2lybF8xMDBkID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ2dpcmwnLCBdKQpsZWN0dXJlXzEwMGQgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnbGVjdHVyZScsIF0pCgojdXNlIG91ciBjb3NpbmUgc2ltaWxhcml0eSBmdW5jdGlvbgpjb3NzaW0gPSBmdW5jdGlvbihBLCBCKXsKICBudW1lcmF0b3IgPSBzdW0oQSpCKQogIGRlbm9taW5hdG9yID0gc3FydChzdW0oQSpBKSkqc3FydChzdW0oQipCKSkKICBjb3NpbmVfc2ltID0gbnVtZXJhdG9yL2Rlbm9taW5hdG9yCiAgcmV0dXJuKGNvc2luZV9zaW0pCn0KCiN5b3UgY2FuIHRoZW4gY29tcGFyZSB0aGUgdmVjdG9ycyBwYWlyLXdpc2U6CmNvc3NpbShjcmltZV8xMDBkLCBtYWNoaW5lXzEwMGQpCmNvc3NpbShjcmltZV8xMDBkLCBnaXJsXzEwMGQpCmNvc3NpbShjcmltZV8xMDBkLCBsZWN0dXJlXzEwMGQpCmBgYAoKYGBge3J9CiNub3cgd2UgcmVkbyB0aGVzZSBzdGVwcyB3aXRoIGEgZGlmZmVyZW50IHByZS10cmFpbmVkIG1vZGVsCgojZm9yIHRoZSA2Qi8xMDBkIG1vZGVsOgppbml0X2dsb3ZlKGRpciA9ICcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9Eb2N1bWVudHMvZ2xvdmUnLCB3aGljaF9tb2RlbCA9ICc2QicsIGRpbT01MCkKCmNyaW1lXzEwMGQgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnY3JpbWUnLCBdKQptYWNoaW5lXzEwMGQgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnbWFjaGluZScsIF0pCmdpcmxfMTAwZCA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdnaXJsJywgXSkKbGVjdHVyZV8xMDBkID0gYXMudmVjdG9yKGdsb3ZlLnB0W3Jvdy5uYW1lcyhnbG92ZS5wdCkgPT0gJ2xlY3R1cmUnLCBdKQoKI3VzZSBvdXIgY29zaW5lIHNpbWlsYXJpdHkgZnVuY3Rpb24KY29zc2ltID0gZnVuY3Rpb24oQSwgQil7CiAgbnVtZXJhdG9yID0gc3VtKEEqQikKICBkZW5vbWluYXRvciA9IHNxcnQoc3VtKEEqQSkpKnNxcnQoc3VtKEIqQikpCiAgY29zaW5lX3NpbSA9IG51bWVyYXRvci9kZW5vbWluYXRvcgogIHJldHVybihjb3NpbmVfc2ltKQp9CgojeW91IGNhbiB0aGVuIGNvbXBhcmUgdGhlIHZlY3RvcnMgcGFpci13aXNlOgpjb3NzaW0oY3JpbWVfMTAwZCwgbWFjaGluZV8xMDBkKQpjb3NzaW0oY3JpbWVfMTAwZCwgZ2lybF8xMDBkKQpjb3NzaW0oY3JpbWVfMTAwZCwgbGVjdHVyZV8xMDBkKQpgYGAKCgpEbyB0aGVzZSBmaW5kaW5ncyBzdXJwcmlzZSB5b3U/CgojIyBUYXNrIDM6IFVzaW5nIHdvcmQgZW1iZWRkaW5ncwoKVXNlIHRoZSB3b3JkIGVtYmVkZGluZ3MgeW91IGxvYWRlZCBpbiBUYXNrIDMgYW5kIGFuc3dlciB0aGVzZSBxdWVzdGlvbnMgd2l0aCB0aGUgYXBwcm9wcmlhdGUgYXJpdGhtZXRpYyBvcGVyYXRpb25zOgoKLSBXaGljaCBlbWJlZGRpbmcgaXMgY2xvc2VyIHRvICJMT05ET04iOiAiV0VTVE1JTlNURVIiIG9yICJFTkdMQU5EIj8KLSBXaGF0IGlzIHRoZSBjbG9zZXN0IG5laWdoYm91ciB0byB0aGUgdmVjdG9yIHJldHJpZXZlZCBieSBjYWxjdWxhdGluZzogIkRPQ1RPUiIgLSAiTUFOIiArICJXT01BTiI/IFdoYXQgZGlkIHlvdSBleHBlY3Q/Ci0gSW4gdGhlIFR3aXR0ZXIgcHJlLXRyYWluZWQgbW9kZWwsIHdoaWNoIGNvbmNlcHQgaXMgY2xvc2VzdCBpbiB0aGUgdmVjdG9yIHNwYWNlIHRvICJTVUNDRVNTIj8KCmBgYHtyfQojMS4KbG9uZG9uX2VtYiA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdsb25kb24nLCBdKQp3ZXN0bWluc3Rlcl9lbWIgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnd2VzdG1pbnN0ZXInLCBdKQplbmdsYW5kX2VtYiA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdlbmdsYW5kJywgXSkKCmNvc3NpbShsb25kb25fZW1iLCB3ZXN0bWluc3Rlcl9lbWIpCmNvc3NpbShsb25kb25fZW1iLCBlbmdsYW5kX2VtYikKCiNBbnN3ZXI6ICJFbmdsYW5kIiBpcyBjbG9zZXIgdG8gIkxvbmRvbiIgdGhhbiAiV2VzdG1pbnN0ZXIiCmBgYAoKYGBge3J9CiMyLgppbml0X2dsb3ZlKGRpciA9ICcvVXNlcnMvYmVubmV0dGtsZWluYmVyZy9Eb2N1bWVudHMvZ2xvdmUnLCB3aGljaF9tb2RlbCA9ICc2QicsIGRpbT0xMDApCndvbWFuX2VtYiA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICd3b21hbicsIF0pCmRvY3Rvcl9lbWIgPSBhcy52ZWN0b3IoZ2xvdmUucHRbcm93Lm5hbWVzKGdsb3ZlLnB0KSA9PSAnZG9jdG9yJywgXSkKbWFuX2VtYiA9IGFzLnZlY3RvcihnbG92ZS5wdFtyb3cubmFtZXMoZ2xvdmUucHQpID09ICdtYW4nLCBdKQoKbXlzdGVyeV92ZWN0b3IgPSBkb2N0b3JfZW1iIC0gbWFuX2VtYiArIHdvbWFuX2VtYgoKI3RvIGNhbGN1bGF0ZSB2ZWN0b3IgcHJveGltaXR5IHdpdGhudGhlIGdsb3ZlLnB0IGRmbSwgd2UgbmVlZCB0byBhZGQgdGhlIG15c3RlcnkgdmVjdG9yIHRvIHRoZSBkZm06CgpteXN0ZXJ5ID0gZGF0YS5mcmFtZShtYXRyaXgobXlzdGVyeV92ZWN0b3IsIG5yb3cgPSAxLCBieXJvdyA9IEYpKQpuYW1lcyhteXN0ZXJ5KSA9IHBhc3RlKCd2ZWNfJywgMToxMDAsIHNlcD0iIikKcSA9IGFzLmRmbShteXN0ZXJ5KQpnbG92ZS5wdDIgPSByYmluZChnbG92ZS5wdCwgcSkKcm93Lm5hbWVzKGdsb3ZlLnB0MilbNDAwMDAxXSA9IGMoJ215c3RlcnlfMScpCmNvc19zaW1fdmFscyA9IHRleHRzdGF0X3NpbWlsKGdsb3ZlLnB0MgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAsIHNlbGVjdGlvbiA9IGMoIm15c3RlcnlfMSIpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICwgbWFyZ2luID0gImRvY3VtZW50cyIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLCBtZXRob2QgPSAiY29zaW5lIikKCmhlYWQoc29ydChjb3Nfc2ltX3ZhbHNbLDFdLCBkZWNyZWFzaW5nID0gVFJVRSksIDEwKQpgYGAKCmBgYHtyfQpjb3Nfc2ltX3ZhbHMgPSB0ZXh0c3RhdF9zaW1pbChnbG92ZS5wdAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAsIHNlbGVjdGlvbiA9IGMoInN1Y2Nlc3MiKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAsIG1hcmdpbiA9ICJkb2N1bWVudHMiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICwgbWV0aG9kID0gImNvc2luZSIpCmhlYWQoc29ydChjb3Nfc2ltX3ZhbHNbLDFdLCBkZWNyZWFzaW5nID0gVFJVRSksIDUwKQpgYGAKCgojIyBUYXNrIDQ6IChhZHZhbmNlZCkgdHJhaW4gd29yZCBlbWJlZGRpbmdzIG9uIHlvdXIgb3duIG1pbmktY29ycHVzCgpfVGhpcyB0YXNrIGlzIHJlbGF0ZWQgdG8gYW5kIGFuIGV4dGVuc2lvbiBvZiB0aGUgaG9tZXdvcmsgUGFydCAxIGJlbG93Ll8KClJlbWVtYmVyIGhvdyB3ZSB1c2VkIHByZS10cmFpbmVkIG1vZGVscyBzbyBmYXI/IFlvdSBjYW4gdHJhaW4geW91ciBvd24gbW9kZWxzIHdoaWNoIG1pZ2h0IGJlIGEgZ29vZCBvcHRpb24gaWYgeW91IGFyZSBpbnRlcmVzdGVkIGluIGEgbW9yZSBsb2NhbGlzZWQgbGFuZ3VhZ2UgcGhlbm9tZW5vbi4gQSBtYWpvciBkb3duc2lkZSBpcyBvZiBjb3Vyc2UgdGhlIHNpemUgb2YgdGhlIGNvcnBvcmEgdXNlZCBmb3IgdHJhaW5pbmcuIENvbW1vbiBzaXplcyB1c2VkIGluIHRoZSBwcm92aWRlZCBwcmUtdHJhaW5lZCBtb2RlbHMgYXJlIDg0MCBiaWxsaW9uIGRvY3VtZW50cywgZm9yIGV4YW1wbGUuCgpGb3Igbm93LCBjb2xsYXRlIGEgbWluaS1jb3JwdXMgb2YgdGV4dHMgdGhhdCB5b3UgaGF2ZSB3cml0dGVuLiBDcmVhdGUgYSBgY29ycHVzYCBvYmplY3QuCgpgYGB7cn0KI1lvdXIgY29kZSBoZXJlCmBgYAoKCk5vdyB5b3UgY2FuIHVzZSB0aGF0IGNvcnB1cyB0byBjb25zdHJ1Y3QgYSBjby1vY2N1cnJlbmNlIG1hdHJpeCBhbmQgZW1iZWQgdGhlIHJlc3VsdGluZyB2ZWN0b3JzLiBUbyBkbyB0aGlzLCBmb2xsb3cgdGhlIHN0ZXBzIGluIHRoZSBbcXVhbnRlZGEgdGV4dDJ2ZWNdKGh0dHBzOi8vcXVhbnRlZGEuaW8vYXJ0aWNsZXMvcGtnZG93bi9yZXBsaWNhdGlvbi90ZXh0MnZlYy5odG1sKSB0dXRvcmlhbC4KCgpgYGB7cn0KI1lvdXIgY29kZSBoZXJlCmBgYAoKCkluIHlvdXIgY291cnNld29yayBjb3JwdXMsIHdoaWNoIHdvcmQgaXMgdGhlIGNsb3Nlc3QgaW4gY29zaW5lIHNpbWlsYXJpdHkgdG8gdGhlIHdvcmQgImNyaW1lIj8KCgpgYGB7cn0KI1lvdXIgY29kZSBoZXJlCmBgYAoKLS0tCgojIyBIb21ld29yawoKIyMjIFBhcnQgMTogdGV4dDJ2ZWMgaW4gcXVhbnRlZGEKClRoZSBwYWNrYWdlIHF1YW50ZWRhIGFsc28gY29udGFpbnMgc29tZSBmdW5jdGlvbmFsaXR5IHRoYXQgY2FuIGJlIHVzZWQgdG8gd29yayB3aXRoIHdvcmQgZW1iZWRkaW5ncy4gUmVwbGljYXRlIHRoZSB0dXRvcmlhbCBiZWxvdyBhbmQgYWRkIHNvbWUgd29yZCBhcml0aG1ldGljcyBvbiB5b3VyIG93bi4KClR1dG9yaWFsIGxpbms6IFtRdWFudGVkYSB0ZXh0MnZlY10oaHR0cHM6Ly9xdWFudGVkYS5pby9hcnRpY2xlcy9wa2dkb3duL3JlcGxpY2F0aW9uL3RleHQydmVjLmh0bWwpCgoKIyMjIFBhcnQgMjogUHJhY3Rpc2luZyBjdXN0b20gZnVuY3Rpb25zIGluIFIKCkZvciB5b3VyIGRhdGEgc2NpZW5jZSBza2lsbHNldCBpdCBpcyBlc3NlbnRpYWwgdGhhdCB5b3UgYmVjb21lIGNvbWZvcnRhYmxlIHdyaXRpbmcgeW91ciBvd24gZnVuY3Rpb25zLiBXZSBoYXZlIHdhbGtlZCB0aHJvdWdoIGEgZmV3IGV4YW1wbGVzIGluIHRoZSBsZWN0dXJlcyBzbyBmYXIuIAoKTm93OiB3cml0ZSBhIGZ1bmN0aW9uIHRoYXQgcmV0dXJucyB0aGUgRXVjbGlkZWFuIGRpc3RhbmNlIG9mIHR3byB2ZWN0b3JzIHJlcHJlc2VudGVkIGluIGEgNS1kaW1lbnNpb25hbCBzcGFjZS4gQ2FsbCB0aGF0IGZ1bmN0aW9uIGBldWNsaWRlYW5fNV9kaW1gLgoKCmBgYHtyfQojWW91ciBjb2RlIGhlcmUKYGBgCgpUZXN0IHlvdXIgZnVuY3Rpb24gd2l0aCB0aGUgdHdvIHZlY3RvcnMgYmVsb3c6CgpgYGB7cn0KdmVjdG9yXzEgPSBjKDMsIDUsIDEsIDY1LCA5MDApCnZlY3Rvcl8yID0gYygxMywgMSwgNSwgNywgMzQwKQpgYGAKCgojIyMgUGFydCAzOiBOZXh0IHN0ZXBzIGZvciB5b3VyIHByb2plY3QKCk92ZXIgdGhlIHJlYWRpbmcgd2VlaywgeW91IHdpbGwgaGF2ZSBzb21lIHRpbWUgdG8gdGhpbmsgaW4gbW9yZSBkZXRhaWwgYWJvdXQgeW91ciBwcm9qZWN0LiBBZnRlciB0aGUgcmVhZGluZyB3ZWVrLCB5b3UgYXJlIGFza2VkIHRvIGhhbmQgaW4geW91ciBjb25jZXB0IGRyYWZ0LiBTdGFydCB3b3JraW5nIG9uIHRoZSBwYXJ0cyB0aGF0IHlvdSBhcmUgYWxyZWFkeSBjbGVhciBhYm91dC4KCiMjIyBQYXJ0IDQ6IFBhY2thZ2VzIGZvciB0aGUgbmV4dCBzZXNzaW9uCgpJbnN0YWxsIHRoZSBmb2xsb3dpbmcgcGFja2FnZXM6CgotIGNhcmV0Ci0gcFJPQwoKLS0tCg==</div>
 
 
 
