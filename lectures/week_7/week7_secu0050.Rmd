@@ -88,7 +88,7 @@ data2 = data1[sample(1:20, 20), ]
 
 ## Higher dimensional data
 
-```{r}
+```{r echo=F}
 set.seed(123457)
 data2 = data.frame(account = rep(c('bot', 'real'), each=100)
                    , tweet_freq = round(c(rnorm(100, 35, 5), rnorm(100, 25, 10)), 0)
@@ -113,7 +113,7 @@ abline(v = min(data2$tweet_freq[data2$account == 'bot']), col='black', lwd=2, lt
 
 ## 
 
-```{r}
+```{r echo=F}
 plot(data2$tweet_freq, data2$following, col=data2$account
      , pch=19
      , xlab = 'Tweets/day'
@@ -401,7 +401,14 @@ $P('gmail'|spam) =  \frac{1}{4} = 0.25$
 
 ## We end up with a model
 
-For any new next, we can use $P(spam|text)$ to estimate whether it is spam or not.
+For any new text, we can use $P(spam|text)$ to estimate whether it is spam or not.
+
+##
+
+<img src='../img/naivebayesalbon.png'>
+
+<small>Source: [chrisalbon.com](https://chrisalbon.com/#machine_learning)</small>
+
 
 ##
 
@@ -449,7 +456,7 @@ nb_pred = predict(nb_model, test_data)
 ```{r echo=F}
 knitr::kable(table(test_data$account, svm_pred), caption = 'SVM model')
 ```
-```{r}
+```{r echo=F}
 knitr::kable(table(test_data$account, nb_pred), caption = 'NB model')
 ```
 
@@ -719,22 +726,22 @@ auc1 = roc(response = test_data$account
 auc1
 ```
 
-## What if we compare our two models?
+<!-- ## What if we compare our two models? -->
 
-```{r echo=F}
-{plot(probs2, col=rep(c('red', 'black'), each=200), main = 'Also class probabilities for acc = 0.46', pch=19)
-abline(h=0.5, lwd=3, lty=3)}
-```
+<!-- ```{r echo=F} -->
+<!-- {plot(probs2, col=rep(c('red', 'black'), each=200), main = 'Also class probabilities for acc = 0.46', pch=19) -->
+<!-- abline(h=0.5, lwd=3, lty=3)} -->
+<!-- ``` -->
 
-##
+<!-- ## -->
 
-```{r}
-auc2 = roc(response = test_data$account
-               , predictor = probs2
-               , ci=T)
+<!-- ```{r} -->
+<!-- auc2 = roc(response = test_data$account -->
+<!--                , predictor = probs2 -->
+<!--                , ci=T) -->
 
-plot.roc(auc2, xlim=c(1, 0), legacy.axes = T)
-```
+<!-- plot.roc(auc2, xlim=c(1, 0), legacy.axes = T) -->
+<!-- ``` -->
 
 
 
