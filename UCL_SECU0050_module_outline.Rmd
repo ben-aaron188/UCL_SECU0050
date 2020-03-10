@@ -201,8 +201,8 @@ _Use this week to catch up on any literature or homework/tutorials._
     - Denny, M. J., & Spirling, A. (2018). Text Preprocessing For Unsupervised Learning: Why It Matters, When It Misleads, And What To Do About It. Political Analysis, 26(2), 168–189. [https://doi.org/10.1017/pan.2017.44](https://doi.org/10.1017/pan.2017.44)
 - Recommended:
     - [Datacamp unsupervised learning](https://www.datacamp.com/courses/unsupervised-learning-in-r)
-- Slides: [Week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_8/week8_secu0050.html)
-- Tutorial + Homework: [Tutorial, week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_8/week8_tutorial_secu0050.nb.html)
+- Slides: [Week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_8/week8_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_8/week8_secu0050.pdf)
+- Tutorial + Homework: [Tutorial, week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_8/week8_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_8/week8_tutorial_secu0050_solutions.Rmd)
 
 ### Week 9 - Machine learning III (12 Mar)
 
