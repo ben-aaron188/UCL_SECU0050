@@ -252,17 +252,20 @@ bigrams_tfidf = dfm_tfidf(bigrams_corrected
 ```{r}
 #AVG SENTIMENT
 library(syuzhet)
-df_vlogs_data = vlogs_corpus_large$documents
-df_vlogs_data$sentiment_score = get_sentiment(df_vlogs_data$texts)
+df_vlogs_data = convert(vlogs_corpus_large, to='data.frame')
+df_vlogs_data$sentiment_score = get_sentiment(df_vlogs_data$text)
 
 #CLI readability
-cli = textstat_readability(df_vlogs_data$texts, measure = 'Coleman.Liau')
+cli = textstat_readability(df_vlogs_data$text, measure = 'Coleman.Liau')
 df_vlogs_data$cli = cli$Coleman.Liau
 
 #ADD grouping variable
-df_vlogs_data$vlogger = ifelse(substr(rownames(df_vlogs_data), 1, 5) == "casey"
+df_vlogs_data$vlogger = ifelse(substr(df_vlogs_data$doc_id, 1, 5) == "casey"
                                   , "CN"
                                   , "MM")
+# df_vlogs_data$vlogger = ifelse(substr(rownames(df_vlogs_data), 1, 5) == "casey"
+#                                   , "CN"
+#                                   , "MM")
 ```
 
 
