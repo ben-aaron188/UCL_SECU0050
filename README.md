@@ -1,6 +1,6 @@
-## DATA SCIENCE FOR CRIME SCIENTISTS 2019/2020
+## DATA SCIENCE FOR CRIME SCIENTISTS
 
-This is the companion repo for the 2019-2020 module for 3rd year undergraduate students of the BSc in Crime Science at UCL.
+This is the companion repo for the 2020-2021 module for 3rd year undergraduate students of the BSc in Crime Science at UCL.
 
 ---
 
