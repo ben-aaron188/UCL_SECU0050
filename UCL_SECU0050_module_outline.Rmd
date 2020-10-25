@@ -1,7 +1,6 @@
 ---
 title: "DATA SCIENCE FOR CRIME SCIENTISTS (UCL SECU0050)"
 author: "Bennett Kleinberg (bennett.kleinberg@ucl.ac.uk)"
-date: "26/03/2020"
 output:
   pdf_document:
     toc: yes
@@ -24,21 +23,24 @@ The techniques covered in this module will be of relevance to students undertaki
 
 ## Dates & times
 
-The module is running in Term 2, 2019/2020, from 13 January 2020 - 27 March 2020.
+The module is running **online** in Term 2, 2020/2021, from 11 January 2021 - 26 March 2021.
 
-- Time and date: Thursdays, 9am-12pm.
-- Each session includes a lecture and a tutorial (practical session)
+_Note that due to COVID-19, this module is taught in a hybrid setup: lectures will be provided asynchronously, remotely (i.e., you can watch them at your own time each week), while tutorials are planned to be held in person._
+
+- Time of tutorials: Mondays, 3:00 - 4:30pm
 
 UCL timetable page: [https://timetable.ucl.ac.uk/tt/createCustomTimet.do#](https://timetable.ucl.ac.uk/tt/createCustomTimet.do#)
 
 ## Contact & resources
 
-- Dr Bennett Kleinberg, Assistant Professor in Data Science, bennett.kleinberg@ucl.ac.uk
+- Dr Bennett Kleinberg, Assistant Professor, bennett.kleinberg@ucl.ac.uk
 - TA: Josh Kamps, Doctoral researcher, josh.kamps@ucl.ac.uk
 
 The **moodle page** will accompany this module [here](https://moodle.ucl.ac.uk/course/view.php?id=11193).
 
-Q&A forum: if you have a questions/problem related to the content of the lectures/tutorials, then please use [the Q&A forum](https://moodle.ucl.ac.uk/course/view.php?id=11193&section=4).
+**Walk-in office hour:** A virtual office hour will be held on XXX from XXX to XXX via Zoom (access details to be shared via Moodle). This office hour will include a "waiting room" and you are admitted to the office hour one after the other.
+
+<!-- Q&A forum: if you have a questions/problem related to the content of the lectures/tutorials, then please use [the Q&A forum](https://moodle.ucl.ac.uk/course/view.php?id=11193&section=4). -->
 
 ## Learning outcomes
 
@@ -58,16 +60,16 @@ _Note: the content structure and the assessment assumes that you spend on averag
 
 | Component                    	| Amount 	| Duration 	| Total hours 	|
 |------------------------------	|--------	|----------	|-------------	|
-| Lectures                     	| 10     	| 2h       	| 20h         	|
-| Tutorials/practicals         	| 10     	| 1h       	| 10h         	|
-| Assessment: class test       	| 1      	| 1h      	| 1h          	|
-| Assessment: project          	| 1      	| 47h     	| 47h         	|
-| Homework/revision/self-study 	| 11     	| 10h       | 110h         	|
+| Lectures                     	| 10     	| 1.5h     	| 15h         	|
+| Tutorials/practicals         	| 10     	| 1.5h    	| 15h         	|
+| Assessment: ML challenge    	| 1      	| 1h      	| 28h          	|
+| Assessment: project          	| 1      	| 40h     	| 50h         	|
+| Homework/revision/self-study 	| 10     	| 10h       | 80h         	|
 | TOTAL                        	| -      	| -        	| 188h         	|
 
 ## Structure
 
-The general structure of this module is as follows: there are five content blocks (web data collection, text mining, machine learning, advanced techniques) which each will be covered in weekly 3h-sessions consisting of lectures and tutorials. The lectures cover the approaches on a conceptual (what do they do?) and functional level (how do they work?). The tutorials are practical sessions in which you will learn how to implement the techniques in the R programming language. During the tutorials, we will be there to assist you and help you. 
+The general structure of this module is as follows: there are four content blocks (web data collection, text mining, machine learning, advanced techniques) which each will be covered in weekly sessions consisting of lectures and tutorials. The lectures cover the approaches on a conceptual (what do they do?) and functional level (how do they work?). The tutorials are practical sessions in which you will learn how to implement the techniques in the R programming language. During the tutorials, there is assistance available to help you. 
 
 Each week is (roughly) structured as follows:
 
@@ -79,19 +81,22 @@ Each week is (roughly) structured as follows:
 
 ## Timetable
 
-| UCL week 	| Module week 	| Date   	| Topic                    	|
+_Date here refers to the release date of the lecture_
+
+| UCL week 	| Module week 	| Date  	| Topic                    	|
 |----------	|-------------	|--------	|--------------------------	|
-| 21       	| 1           	| 16 Jan 	| Web data collection I    	|
-| 22       	| 2           	| 23 Jan 	| Web data collection II   	|
-| 23       	| 3           	| 30 Jan 	| Text mining I            	|
-| 24       	| 4           	| 6 Feb  	| Text mining II           	|
-| 25       	| 5           	| 13 Feb 	| Text mining III          	|
-| 26       	| 6           	| -      	| READING WEEK             	|
-| 27       	| 7           	| 27 Feb 	| Machine learning I       	|
-| 28       	| 8           	| 5 Mar  	| Machine learning II      	|
-| 29       	| 9           	| 12 Mar 	| Machine learning III     	|
-| 30       	| 10          	| 19 Mar 	| Case studies            	|
-| 31       	| 11          	| 26 Mar 	| **Class test**          	|
+| 20       	| 0           	|  4 Jan 	| Preparation + setup     	|
+| 20       	| 1           	| 11 Jan 	| Web data collection I    	|
+| 21       	| 2           	| 18 Jan 	| Web data collection II   	|
+| 22       	| 3           	| 25 Jan 	| Text mining I            	|
+| 23       	| 4           	|  1 Feb 	| Text mining II           	|
+| 24       	| 5           	|  8 Feb 	| Text mining III          	|
+| 25       	| -           	| -      	| READING WEEK             	|
+| 26       	| 6           	| 22 Feb 	| Machine learning I       	|
+| 27       	| 7           	|  1 Mar 	| Machine learning II      	|
+| 28       	| 8           	|  8 Mar 	| Machine learning III     	|
+| 39       	| 9           	| 15 Mar 	| Guest lecture 1          	|
+| 30       	| 10          	| 22 Mar 	| Guest lecture 2          	|
 
 
 ## Content
@@ -100,23 +105,24 @@ _Note: slides and tutorials will be added as the module progresses._
 
 ### Week 0 - Module preparation and software setup
 
-Please ensure that you follow the guides below to setup your computer with the necessary software. We also assume that you have a basic understanding of pragmatically solving coding problems. Do do this, please take the time to walk through the tutorial below.
+<!-- Please ensure that you follow the guides below to setup your computer with the necessary software. We also assume that you have a basic understanding of pragmatically solving coding problems. Do do this, please take the time to walk through the tutorial below. -->
 
-- Tutorial guide: [R for crime scientists in 12 steps](https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/8cee7970ae540c8c23d04a308ec7e19cb732abc3/tutorials/week_0/r_in_12_steps.html)
-- Tutorial guide: [Getting ready for R](https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/8cee7970ae540c8c23d04a308ec7e19cb732abc3/tutorials/week_0/getting_ready_for_r.html)
-- Tutorial guide: [How to solve data science problems](https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/df0b0c3114f3fc804468bbcd831fc8345547b91a/tutorials/week_0/how_to_solve_data_science_problems.html)
+<!-- - Tutorial guide: [R for crime scientists in 12 steps](https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/8cee7970ae540c8c23d04a308ec7e19cb732abc3/tutorials/week_0/r_in_12_steps.html) -->
+<!-- - Tutorial guide: [Getting ready for R](https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/8cee7970ae540c8c23d04a308ec7e19cb732abc3/tutorials/week_0/getting_ready_for_r.html) -->
+<!-- - Tutorial guide: [How to solve data science problems](https://rawcdn.githack.com/ben-aaron188/UCL_SECU0050/df0b0c3114f3fc804468bbcd831fc8345547b91a/tutorials/week_0/how_to_solve_data_science_problems.html) -->
 
-### Week 1 - Web data collection I (16 Jan)
+### Week 1 - Web data collection I
 
 - Topics covered: web data collection with APIs
 - Required preparation
     - Morstatter, F., Pfeffer, J., Liu, H., & Carley, K. M. (2013). Is the Sample Good Enough? Comparing Data from Twitter’s Streaming API with Twitter’s Firehose. ArXiv:1306.5204 [Physics]. Retrieved from [http://arxiv.org/abs/1306.5204](http://arxiv.org/abs/1306.5204)
     - [MDN HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [MDN HTML tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics)
     - Recommended: Pfeffer, J., Mayer, K., & Morstatter, F. (2018). Tampering with Twitter’s Sample API. EPJ Data Science, 7(1), 50. [https://doi.org/10.1140/epjds/s13688-018-0178-0](https://doi.org/10.1140/epjds/s13688-018-0178-0)
-- Slides: [Week 1: Web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_1/week1_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_1/week1_secu0050.pdf)
-- Tutorial + Homework: [Tutorial, week 1: web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050_solutions.nb.html)
+    
+<!-- - Slides: [Week 1: Web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_1/week1_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_1/week1_secu0050.pdf) -->
+<!-- - Tutorial + Homework: [Tutorial, week 1: web data collection 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_1/week1_tutorial_secu0050_solutions.nb.html) -->
 
-### Week 2 - Web data collection II (23 Jan)
+### Week 2 - Web data collection II
 
 - Topics covered: HTML basics, web scraping in R
 - Required preparation
@@ -124,11 +130,13 @@ Please ensure that you follow the guides below to setup your computer with the n
     - [MDN CSS first steps](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started)
     - Ignatow & Mihalcea, 2018: C6 Web crawling
     - [Rvest package documentation](https://cran.r-project.org/web/packages/rvest/rvest.pdf)
-- Slides: [Week 2: Web data collection 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_2/week2_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_2/week2_secu0050.pdf)
-- Tutorial + Homework: [Tutorial, week 2: web data collection 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_2/week2_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_2/week2_tutorial_secu0050_solutions.Rmd)
 
 
-### Week 3 - Text mining I (30 Jan)
+<!-- - Slides: [Week 2: Web data collection 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_2/week2_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_2/week2_secu0050.pdf) -->
+<!-- - Tutorial + Homework: [Tutorial, week 2: web data collection 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_2/week2_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_2/week2_tutorial_secu0050_solutions.Rmd) -->
+
+
+### Week 3 - Text mining I
 
 - Topics covered: quantification problem, TF-IDF, text metrics
 - Required preparation
@@ -140,10 +148,12 @@ Please ensure that you follow the guides below to setup your computer with the n
 - Recommended: 
     - [Regular expressions with stringr](https://stringr.tidyverse.org/articles/regular-expressions.html)
     - [Grolemund & Wickham, 2016: C14 Strings](https://r4ds.had.co.nz/strings.html)
-- Slides: [Week 3: Text mining 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_3/week3_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_3/week3_secu0050.pdf)
-- Tutorial + Homework: [Tutorial, week 3: Text mining 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_3/week3_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_3/week3_tutorial_secu0050_solutions.nb.html)
 
-### Week 4 - Text mining II (6 Feb)
+
+<!-- - Slides: [Week 3: Text mining 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_3/week3_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_3/week3_secu0050.pdf) -->
+<!-- - Tutorial + Homework: [Tutorial, week 3: Text mining 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_3/week3_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_3/week3_tutorial_secu0050_solutions.nb.html) -->
+
+### Week 4 - Text mining II
 
 - Topics covered: POS tagging, ngrams, sentiment analysis, sentiment trajectories
 - Required preparation:
@@ -152,10 +162,11 @@ Please ensure that you follow the guides below to setup your computer with the n
     - Gao, J., Jockers, M. L., Laudun, J., & Tangherlini, T. (2016). A multiscale theory for the dynamical evolution of sentiment in novels. Behavioral, Economic and Socio-Cultural Computing (BESC), 2016 International Conference On, 1–4.
 - Recommended:
     - Jockers, M. (2015). Revealing Sentiment and Plot Arcs with the Syuzhet Package. http://www.matthewjockers.net/2015/02/02/syuzhet/
-- Slides: [Week 4: Text mining 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_4/week4_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_4/week4_secu0050.pdf)
-- Tutorial+ Homework: [Tutorial: week 4: Text mining 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_4/week4_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_4/week4_tutorial_secu0050_solutions.nb.html)
 
-### Week 5 - Text mining III (13 Feb)
+<!-- - Slides: [Week 4: Text mining 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_4/week4_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_4/week4_secu0050.pdf) -->
+<!-- - Tutorial+ Homework: [Tutorial: week 4: Text mining 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_4/week4_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_4/week4_tutorial_secu0050_solutions.nb.html) -->
+
+### Week 5 - Text mining III
 
 - Topics covered: text similarity, word embeddings
 - Required preparation
@@ -170,15 +181,12 @@ Please ensure that you follow the guides below to setup your computer with the n
     - Garg, N., Schiebinger, L., Jurafsky, D., & Zou, J. (2018). Word embeddings quantify 100 years of gender and ethnic stereotypes. Proceedings of the National Academy of Sciences, 115(16), E3635–E3644. [https://doi.org/10.1073/pnas.1720347115](https://doi.org/10.1073/pnas.1720347115)
     - Bolukbasi, T., Chang, K.-W., Zou, J., Saligrama, V., & Kalai, A. (2016). Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings. ArXiv:1607.06520 [Cs, Stat]. [http://arxiv.org/abs/1607.06520](http://arxiv.org/abs/1607.06520)
     - Vylomova, E., Rimell, L., Cohn, T., & Baldwin, T. (2016). Take and Took, Gaggle and Goose, Book and Read: Evaluating the Utility of Vector Differences for Lexical Relation Learning. ArXiv:1509.01692 [Cs]. [http://arxiv.org/abs/1509.01692](http://arxiv.org/abs/1509.01692)
-- Slides: [Week 5: Text mining 3](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_5/week5_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_5/week5_secu0050.pdf)
-- Tutorial + Homework: [Tutorial, week 5: Text mining 3](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_5/week5_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_5/week5_tutorial_secu0050_solutions.Rmd)
+
+<!-- - Slides: [Week 5: Text mining 3](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_5/week5_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_5/week5_secu0050.pdf) -->
+<!-- - Tutorial + Homework: [Tutorial, week 5: Text mining 3](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_5/week5_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_5/week5_tutorial_secu0050_solutions.Rmd) -->
 
 
-### Week 6 - Reading week
-
-_Use this week to catch up on any literature or homework/tutorials._
-
-### Week 7 - Machine learning I (27 Feb)
+### Week 6 - Machine learning I
 
 - Topics covered: supervised machine learning (classification), core algorithms, performance metrics
 - Required preparation
@@ -190,10 +198,11 @@ _Use this week to catch up on any literature or homework/tutorials._
 - Recommended:
     - [Kuhn, 2019: C5 Model training](https://topepo.github.io/caret/model-training-and-tuning.html)
     - [YT, 3Blue1Brown: Bayes theorem, and making probability intuitive](https://www.youtube.com/watch?v=HZGCoVF3YvM)
-- Slides: [Week 7: Machine Learning 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_7/week7_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_7/week7_secu0050.pdf)
-- Tutorial + Homework: [Tutorial, week 7: Machine Learning 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_7/week7_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_7/week7_tutorial_secu0050_solutions.nb.html)
 
-### Week 8 - Machine learning II (5 Mar)
+<!-- - Slides: [Week 7: Machine Learning 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_7/week7_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_7/week7_secu0050.pdf) -->
+<!-- - Tutorial + Homework: [Tutorial, week 7: Machine Learning 1](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_7/week7_tutorial_secu0050.nb.html), [Tutorial solutions](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_7/week7_tutorial_secu0050_solutions.nb.html) -->
+
+### Week 7 - Machine learning II
 
 - Topics covered: unsupervised machine learning, core algorithm, problems
 - Required preparation
@@ -201,35 +210,46 @@ _Use this week to catch up on any literature or homework/tutorials._
     - Denny, M. J., & Spirling, A. (2018). Text Preprocessing For Unsupervised Learning: Why It Matters, When It Misleads, And What To Do About It. Political Analysis, 26(2), 168–189. [https://doi.org/10.1017/pan.2017.44](https://doi.org/10.1017/pan.2017.44)
 - Recommended:
     - [Datacamp unsupervised learning](https://www.datacamp.com/courses/unsupervised-learning-in-r)
-- Slides: [Week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_8/week8_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_8/week8_secu0050.pdf)
-- Tutorial + Homework: [Tutorial, week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_8/week8_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_8/week8_tutorial_secu0050_solutions.Rmd)
 
-### Week 9 - Machine learning III (12 Mar)
 
-Guest lecture: Josh Kamps (Doctoral researcher)
+<!-- - Slides: [Week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/lectures/week_8/week8_secu0050.html), [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_8/week8_secu0050.pdf) -->
+<!-- - Tutorial + Homework: [Tutorial, week 8: Machine Learning 2](https://raw.githack.com/ben-aaron188/UCL_SECU0050/master/tutorials/week_8/week8_tutorial_secu0050.nb.html), [Tutorial solutions](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/tutorials/week_8/week8_tutorial_secu0050_solutions.Rmd) -->
+
+
+### Week 8 - Machine learning III
+
+Guest lecture: Josh Kamps
 
 - Topics covered: neural networks in R, intro to deep learning
 - Required preparation:
     - Domingos, P. (2012). A few useful things to know about machine learning. Communications of the ACM, 55(10), 78. https://doi.org/10.1145/2347736.2347755
     - Nielsen, M. A. (2015). Neural Networks and Deep Learning. http://neuralnetworksanddeeplearning.com
-- Slides: [Week 9 : Machine Learning 3](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_9/week9_secu0050.pdf)
-- Tutorial + homework: [Tutoriall, week 9: Machine Learning 3](https://raw.githack.com/JoshKamps/JoshKamps.github.io/master/week9_tutorial_secu0050.nb.html#)
+
+<!-- - Slides: [Week 9 : Machine Learning 3](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/lectures/week_9/week9_secu0050.pdf) -->
+<!-- - Tutorial + homework: [Tutoriall, week 9: Machine Learning 3](https://raw.githack.com/JoshKamps/JoshKamps.github.io/master/week9_tutorial_secu0050.nb.html#) -->
 
 
-### Week 10 - Case studies (19 Mar)
+### Week 9 - Guest lecture 1
 
-This lecture includes two guest talks:
+tbd.
 
-- Maximilian Mozes - "On the robustness of intelligent systems" 
-- Isabelle van der Vegt - "Data Science for Threat Assessment" 
+<!-- This lecture includes two guest talks: -->
 
-- Required preparation
-    - Gu, T., Dolan-Gavitt, B., & Garg, S. (2019). BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain. ArXiv:1708.06733 [Cs]. Retrieved from [http://arxiv.org/abs/1708.06733](http://arxiv.org/abs/1708.06733)
-    - Kurakin, A., Goodfellow, I., & Bengio, S. (2017). Adversarial examples in the physical world. ArXiv:1607.02533 [Cs, Stat]. Retrieved from [http://arxiv.org/abs/1607.02533](http://arxiv.org/abs/1607.02533)
-    - Azucar, D., Marengo, D., & Settanni, M. (2018). Predicting the Big 5 personality traits from digital footprints on social media: A meta-analysis. Personality and Individual Differences, 124, 150–159. [https://doi.org/10.1016/j.paid.2017.12.018](https://doi.org/10.1016/j.paid.2017.12.018)
-    - van der Vegt, I., Mozes, M., Gill, P., & Kleinberg, B. (2019). Online influence, offline violence: Linguistic responses to the “Unite the Right” rally. ArXiv:1908.11599 [Cs]. Retrieved from http://arxiv.org/abs/1908.11599
-- Slides: _video-recorded lectures due to the Corona virus situation_
-- Tutorial + Homework: _This tutorial will give you time to work on your final project under our guidance._
+<!-- - Maximilian Mozes - "On the robustness of intelligent systems"  -->
+<!-- - Isabelle van der Vegt - "Data Science for Threat Assessment"  -->
+
+<!-- - Required preparation -->
+<!--     - Gu, T., Dolan-Gavitt, B., & Garg, S. (2019). BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain. ArXiv:1708.06733 [Cs]. Retrieved from [http://arxiv.org/abs/1708.06733](http://arxiv.org/abs/1708.06733) -->
+<!--     - Kurakin, A., Goodfellow, I., & Bengio, S. (2017). Adversarial examples in the physical world. ArXiv:1607.02533 [Cs, Stat]. Retrieved from [http://arxiv.org/abs/1607.02533](http://arxiv.org/abs/1607.02533) -->
+<!--     - Azucar, D., Marengo, D., & Settanni, M. (2018). Predicting the Big 5 personality traits from digital footprints on social media: A meta-analysis. Personality and Individual Differences, 124, 150–159. [https://doi.org/10.1016/j.paid.2017.12.018](https://doi.org/10.1016/j.paid.2017.12.018) -->
+<!--     - van der Vegt, I., Mozes, M., Gill, P., & Kleinberg, B. (2019). Online influence, offline violence: Linguistic responses to the “Unite the Right” rally. ArXiv:1908.11599 [Cs]. Retrieved from http://arxiv.org/abs/1908.11599 -->
+<!-- - Slides: _video-recorded lectures due to the Corona virus situation_ -->
+<!-- - Tutorial + Homework: _This tutorial will give you time to work on your final project under our guidance._ -->
+
+### Week 10 - Guest lecture 2
+
+tbd.
+
 
 ## Materials
 
@@ -271,54 +291,84 @@ All datasets used are open-source and available without restrictions.
 
 ## Assessment
 
-### Coursework
+### Machine Learning challenge
 
 - Weight for final grade: 30%
 - Learning outcomes tested: (1) demonstrating knowledge of a broader range of analytical techniques used in the field of Security and Crime Science, (2) understanding the purpose, advantages and disadvantages of different forms of data science techniques, (3) interpreting the results of data science techniques.
-- Deadline: 30 April 2020, 4pm
+- Deadline: 24 March 2021, 4pm
 
-You receive three questions that you have to answer which go into depth of some methods covered in the module.
+#### Background
+
+In this part of the assessment, you can put your text mining and machine learning skills to use. The machine learning challenge is inspired by so-called "shared tasks" and Kaggle-challenges where many researchers/analysts compete against each other in solving one problem.
+
+The problem is typically a classification challenge: you are provided with training data that allow you to build a classification system that learns to differentiate between two (or more) outcomes. For example, the training data could consist of movie reviews and a label associated with them (e.g. positive review vs negative review). The task is to build a classification system (i.e. extracting variables needed for classification and choosing algorithms) that you submit and evaluate at a later stage on unseen (i.e. new) data (so-called test data).
+
+_Note: in order to do this challenge, you need to have done and understood the content covered in weeks 3-8 (i.e. on text mining and machine learning)._
+
+#### Details
+
+The machine learning challenge for this module is hosted on [Kaggle](https://www.kaggle.com/) and accessible at the start of week 3 of the module (25 Jan 2021).
+
+You will find all details on the dedicated Kaggle page for this assessment.
+
+<!-- Possible: emotion detection, pos neg classification, adv perturb detection -->
+
+The workflow consists of these steps:
+
+- you get access to the training data via Kaggle
+- you can find the details of the dataset and the classification problem on the Kaggle competition page
+- use the training dataset to build a classification system that best addresses the problem (note: you will have to make many decisions while doing this, make sure to document these properly in your code)
+- if you are happy with how your model works, you can submit it on Kaggle
+- submitting the work on Kaggle triggers an automatic evaluation of your model against 30% of the unseen test dataset
+- ...
+
+
+#### Deliverables
+
+The core of this assessment is your work in the Kaggle challenge.  
+
+- Report: use the report template (TO BE MADE AVAILABLE) to detail your approach and findings. The word count limit is **750 words**.
+- Presentation: ...
+
 
 #### Grading criteria
 
-| Criterion                   	| Meaning                                                                    	| Weight 	|
-|-----------------------------	|----------------------------------------------------------------------------	|--------	|
-| Quality of the answer to Q1 	| The quality of the solution provided to question 1.                        	| 30%    	|
-| Quality of the answer to Q2 	| The quality of the solution provided to question 2.                        	| 30%    	|
-| Quality of the answer to Q3 	| The quality of the solution provided to question 3.                        	| 30%    	|
-| Quality of the R code       	| The degree to which the R code fulfills its purpose.                       	| 5%     	|
-| Quality of the report       	| The clarity, layout, formatting and overall quality of the written report. 	| 5%     	|
-
-
+| Criterion             | Meaning                                                                               | Weight |
+|-----------------------|---------------------------------------------------------------------------------------|--------|
+| Best submission       | The quality, innovativeness and appropriateness of the best-performing ML solution    | 25%    |
+| Poorest submission    | The quality, innovativeness and appropriateness of the poorest-performing ML solution | 25%    |
+| Quality of the R code | The quality of the R code for the best submission                                     | 20%    |
+| Presentation          | The clarity and content of the presentation                                           | 15%    |
+| Quality of the report | The clarity, layout, formatting and overall quality of the written report.            | 15%    |
 
 ### Applied Data Science Project
 
 - Weight for final grade: 70%
 - Learning outcomes tested: (1) demonstrating knowledge of a broader range of analytical techniques used in the field of Security and Crime Science, (2) performing data science analyses on crime and/or-security related issues, (3) applying the data science pipeline on crime and/or-security related issues, (4) interpreting and effectively reporting the results of said techniques
-- Deadline: 30 April 2020, 4pm.
+- Deadline: 26 April 2021, 4pm.
 - Page limit: See below.
-- Assessment details as [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/assessment/SECU0050_project_assignment.pdf)
+<!-- - Assessment details as [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/assessment/SECU0050_project_assignment.pdf) -->
 
 > _This assessment is the capstone project of the module. It requires you to address a research problem in the full data science workflow (e.g., obtaining the data, processing the data, modelling the data, building predictive models, reporting on the findings, interpreting the outcomes). You will write a brief report on your project (a template will be provided) and you have to submit the R code needed to reproduce your findings. After passing this assessment, you will have the demonstrated the skills to solve a problem using data science techniques._
 
-#### Feedback 
+<!-- #### Feedback  -->
 
-A full project is a major step in your data science skills career. To help you in the process, you will receive feedback from us on a concept draft of your project. The deadline for the concept draft is **9 March 2020 (4pm)** via Turn-it-in on moodle. The requirements for the feedback submission are available on moodle. _The submission of the concept draft accounts for 10% of the Applied Data Science Project._ 
+<!-- A full project is a major step in your data science skills career. To help you in the process, you will receive feedback from us on a concept draft of your project. The deadline for the concept draft is **9 March 2020 (4pm)** via Turn-it-in on moodle. The requirements for the feedback submission are available on moodle. _The submission of the concept draft accounts for 10% of the Applied Data Science Project._  -->
 
-- Feedback form template for submission as [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/assessment/project_concept_draft_template.pdf).
+<!-- - Feedback form template for submission as [PDF](https://github.com/ben-aaron188/UCL_SECU0050/blob/master/assessment/project_concept_draft_template.pdf). -->
 
 #### Assessment topic
 
-This year's topic is authorship attribution. Recently, an area of digital forensics closely connected to NLP that seeks to identify who wrote a piece of text/novel/song/etc. has received considerable attention (e.g., [Why Molière most likely did write his plays](https://advances.sciencemag.org/content/5/11/eaax5489.abstract), [Researcher uses AI to unravel the mystery of Shakespeare’s co-author](https://thenextweb.com/artificial-intelligence/2019/11/27/ai-shakespeare-henry-viii/), and [Plecháč, 2019](https://arxiv.org/abs/1911.05652)).
+<!-- This year's topic is authorship attribution. Recently, an area of digital forensics closely connected to NLP that seeks to identify who wrote a piece of text/novel/song/etc. has received considerable attention (e.g., [Why Molière most likely did write his plays](https://advances.sciencemag.org/content/5/11/eaax5489.abstract), [Researcher uses AI to unravel the mystery of Shakespeare’s co-author](https://thenextweb.com/artificial-intelligence/2019/11/27/ai-shakespeare-henry-viii/), and [Plecháč, 2019](https://arxiv.org/abs/1911.05652)). -->
 
-With more techniques at the researchers' disposal, this area is likely to impact on how we do digital forensic investigations (e.g. when trying to find who wrote a post). The project requires you to conduct your own authorship attribution project including (web) data collection, text processing and text mining, and approaches to identify authorship (e.g. through machine learning). _The exact nature of the project is up to you._ **The only restriction on the topic is that you must not use novels as the source of data**.
+<!-- With more techniques at the researchers' disposal, this area is likely to impact on how we do digital forensic investigations (e.g. when trying to find who wrote a post). The project requires you to conduct your own authorship attribution project including (web) data collection, text processing and text mining, and approaches to identify authorship (e.g. through machine learning). _The exact nature of the project is up to you._ **The only restriction on the topic is that you must not use novels as the source of data**. -->
 
-Further details:
+<!-- Further details: -->
 
-- the project should be on authorship attribution (not author profiling)
-- all steps in this project must be reproducible with your code supplement
-- the project should have a large-scale focus (i.e. not a case study with one document)
-- all three core areas of this module should be used: web data collection, text mining, machine learning
+<!-- - the project should be on authorship attribution (not author profiling) -->
+<!-- - all steps in this project must be reproducible with your code supplement -->
+<!-- - the project should have a large-scale focus (i.e. not a case study with one document) -->
+<!-- - all three core areas of this module should be used: web data collection, text mining, machine learning -->
 
 
 #### The code supplement
@@ -340,21 +390,14 @@ Additional requirements for the report:
 - submit the report via moodle as a pdf file using the following file name: _SECU0050_12345.pdf_ (replace 12345 with your examination number)
 
 
-#### Deliverables
-
-- Concept draft (9 Mar 2020)
-- Project report (30 April 2020, 4pm)
-- Code supplement (30 April 2020, 4pm)
-
 #### Grading criteria
 
-| Criterion                          	| Meaning                                                                                                                                            	| Weight 	|
-|------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------	|--------	|
-| Originality of project             	| The degree to which the student demonstrates insight and is able to use an innovative approach to address the question of authorship attribution.                            	| 20%    	|
-| Quality of data science techniques 	| The degree to which the techniques used in this project are appropriate to answer the research question and are utilised and interpreted properly. 	| 40%    	|
-| Quality of the R code              	| The degree to which the R code is well-documented, reproducible (with provided data if needed), and correct.                                       	| 20%    	|
-| Quality of the report              	| The clarity, layout, formatting and overall quality of the written report.                                                                         	| 10%    	|
-| Concept draft submission           	| Whether or not the concept draft was submitted in the required format.                                                                             	| 10%    	|
+| Criterion                          | Meaning                                                                                                                                            | Weight |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+| Originality of project             | The degree to which the student demonstrates insight and is able to use an innovative approach to address the research problem.                    | 20%    |
+| Quality of data science techniques | The degree to which the techniques used in this project are appropriate to answer the research question and are utilised and interpreted properly. | 50%    |
+| Quality of the R code              | The degree to which the R code is well-documented, reproducible (with provided data if needed), and correct.                                       | 15%    |
+| Quality of the report              | The clarity, layout, formatting and overall quality of the written report.                                                                         | 15%    |
 
 ## Attendance requirement
 
